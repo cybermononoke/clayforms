@@ -1,0 +1,9 @@
+@font-face {
+    font-family: MYFONT;
+    src: url(centuryold.otf);
+  }
+
+  @font-face {
+    font-family: YOURFONT;
+    src: url(johnston.ttf);
+  }
