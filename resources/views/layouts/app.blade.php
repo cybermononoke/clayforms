@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"> -->
 
     <title>CLAYFORMS</title>
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/journals.css') }}">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -53,5 +54,8 @@
 </head>
 <body>
     @yield('content')
+
+   
+
 </body>
 </html>

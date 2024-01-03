@@ -1,0 +1,23 @@
+/* public/css/journals.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 50px;
+    background: url('{{ asset("images/1.png") }}') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h3 {
+    font-family: 'MYFONT', sans-serif;
+    color: #fff;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-family: 'YOURFONT', sans-serif;
+    color: #fff;
+}
+
+/* Add any additional styling rules as needed */

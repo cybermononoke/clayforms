@@ -9,6 +9,8 @@
         margin: 50px;
         background: url('{{ asset("images/1.png") }}') no-repeat center center fixed;
         background-size: cover;
+        height: 100%; /* Add this line */
+        overflow-y: auto; /* Add this line */
     }
 
     h1 {
@@ -48,22 +50,25 @@
         margin: 400px auto;
         border-radius: 10px;
     }
+
+
+    .btn.primary {
+        font-family: "YOURFONT", sans-serif;
+        color:white;
+
+    }
 </style>
 
+
+
+
+
 @section('content')
-
-
     <main>
-
-
-
         <h1>C L 4 Y F 0 R M S</h1>
-
         <p>organize your story</p>
 
-
-
-   
+        <a href="{{ route('journals.index') }}" class="btn-primary">v!3w t4sk5</a>
     </main>
 
 
@@ -76,7 +81,4 @@
     <div class="footer">
     <p>&copy; 2024 cybermononoke. all rights ignored.</p>
     </div>
-
-
-
 @endsection
