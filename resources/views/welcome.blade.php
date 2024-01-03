@@ -2,8 +2,6 @@
 @extends('layouts.app')
 
 
-<link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
-
 <style>
     body {
         font-family: 'Arial', sans-serif; /* Fallback font */
@@ -71,7 +69,7 @@
 
     <div class="about-box">
         <h2>T H 3   S T 0 R Y</h2>
-        <p>I WANNA BE SOFTWARE, THE BEST DESIGN, INFINITE PRINCESS, COMPUTER MIND</p>
+        <p>record your story</p>
     </div>
 
 
