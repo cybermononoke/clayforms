@@ -1,14 +1,28 @@
 @extends('layouts.app')
 
+@section('content')
+    <body style="background-color: #a393eb;">
+        <div> 
+            <h1>G A L L 3 R Y</h1>
+            <form method="GET" action="{{ route('journals.create') }}">
+                <button type="submit" class="button">RECORD</button>
+            </form>
+        </div>
 
-@foreach($journals as $journal)
-    <h3>{{ $journal->title }}</h3>
-    <p>{{ $journal->content }}</p>
-    <a href="{{ route('journals.show', $journal->id) }}">View</a>
-    <a href="{{ route('journals.edit', $journal->id) }}">Edit</a>
-    <form method="POST" action="{{ route('journals.destroy', $journal->id) }}">
-        @csrf
-        @method('DELETE')
-        <button type="submit">Delete</button>
-    </form>
-@endforeach
+        <div>
+            <ul style="list-style-type: none; padding: 0;"> <!-- Add inline styles to remove bullet points -->
+                @foreach($journals as $journal)
+                    <li>
+                        <a href="{{ route('journals.show', $journal->id) }}">
+                            <button class="button">{{ $journal->title }}</button>
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </body>
+
+    <div class="footer">
+    <p>&copy; サイバーモノノケ cybermononoke. all rights ignored.</p>
+    </div>
+@endsection

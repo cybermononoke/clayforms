@@ -63,22 +63,23 @@
 
 
 
+
+
 @section('content')
     <main>
-        <h1>C L 4 Y F 0 R M S</h1>
+        <h1>C L 4 Y F 0 R M S
+        クレイフォームズ
+        </h1>
+        <h2></h2>
         <p>organize your story</p>
+        <p> by サイバーモノノケ </p>
 
-        <a href="{{ route('journals.index') }}" class="btn-primary">v!3w t4sk5</a>
+        <a href="{{ route('journals.index') }}" class="beginbutton">B3G!N</a>
     </main>
 
 
-    <div class="about-box">
-        <h2>T H 3   S T 0 R Y</h2>
-        <p>record your story</p>
-    </div>
-
 
     <div class="footer">
-    <p>&copy; 2024 cybermononoke. all rights ignored.</p>
+    <p>&copy; サイバーモノノケ cybermononoke. all rights ignored.</p>
     </div>
 @endsection

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+
     <!-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"> -->
 
     <title>CLAYFORMS</title>
@@ -50,6 +50,37 @@
             color: white;
             text-align: center;
         }
+
+
+        .button {
+  font-family: 'MYFONT', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.beginbutton {
+  font-family: 'MYFONT', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
     </style>
 </head>
 <body>
