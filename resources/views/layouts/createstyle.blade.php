@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
-        
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -25,27 +25,27 @@
         .title-input {
             outline: none;
             width: 100%;
-            color: #fff;
+            color: #deefd5;
         }
 
         .content-input {
             outline: none;
             width: 100%;
             height: 150px;
-            color: #fff;
+            color: #deefd5;
         }
 
         .title-label,
         .content-label {
             font-family: 'MYFONT', sans-serif;
-            color: #fff;
+            color: #deefd5;
         }
 
         .submitbutton {
             font-family: 'MYFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #fff;
+            color: #deefd5;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -55,15 +55,13 @@
             float: right;
         }
 
-       div .journal-content {
+        div .journal-content {
             font-family: 'MYFONT', sans-serif;
-            color: #fff;
+            color: #deefd5;
             max-height: 150px;
             overflow-y: hidden;
             position: relative;
         }
-
-
     </style>
 </head>
 
@@ -74,4 +72,5 @@
     @yield('content')
 
 </body>
+
 </html>
