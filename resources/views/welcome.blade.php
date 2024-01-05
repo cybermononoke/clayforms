@@ -14,7 +14,7 @@
         クレイフォームズ
     </h1>
 
-    <p>organize your story</p>
+    <p>o r g a n i z e  - y o u r -  s t o r y </p>
 
     <a href="{{ route('journals.index') }}" class="beginbutton">B 3 G ! N</a>
 </main>

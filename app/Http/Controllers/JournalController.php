@@ -9,7 +9,7 @@ class JournalController extends Controller
 {
     public function index()
     {
-        $journals = Journal::all();
+        $journals = Journal::orderBy('created_at', 'desc')->get();
         return view('journals.index', compact('journals'));
     }
 

@@ -59,8 +59,16 @@
             font-family: 'MYFONT', sans-serif;
             color: #deefd5;
             max-height: 150px;
-            overflow-y: hidden;
+            overflow-y: auto;
             position: relative;
+        }
+
+
+        body {
+            height: 100vh;
+            margin: 0;
+            overflow-y: auto;
+            /* Add vertical scrollbar if content overflows */
         }
     </style>
 </head>
