@@ -66,6 +66,34 @@
   cursor: pointer;
 }
 
+.journallistbutton {
+  font-family: 'YOURFONT', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.recordbutton {
+  font-family: 'MYFONT', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 .beginbutton {
   font-family: 'MYFONT', sans-serif;
   background-color: transparent;
@@ -81,9 +109,51 @@
 }
 
 
-    </style>
+.title-input {
+    font-family: 'MYFONT', sans-serif;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.content-input {
+    font-family: 'MYFONT', sans-serif;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+    resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+
+.home-button {
+    font-family: 'MYFONT', sans-serif;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+</style>
+
 </head>
+
+
 <body>
+
+@include('partials.header')
+
+<div class="container">
+    @yield('content')
+</div>
+
+
     @yield('content')
 
    

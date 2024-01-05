@@ -1,19 +1,20 @@
 @extends('layouts.app')
+@include('layouts.createstyle')
 
 @section('content')
     <div>
-        <h1>RECORD</h1>
+        <h1>R 3 C 0 R D</h1>
 
         <form method="POST" action="{{ route('journals.store') }}">
             @csrf
 
-            <label for="title">Title:</label>
-            <input type="text" name="title" required>
+            <label for="title" class="title-label">T ! T L 3</label>
+            <input type="text" name="title" class = "title-input" required>
 
-            <label for="content">Content:</label>
-            <textarea name="content" required></textarea>
+            <label for="content" class= "content-label">C 0 N T 3 N T</label>
+            <textarea name="content" class = "content-input" required></textarea>
 
-            <button type="submit" class="button">RECORD ENTRY</button>
+            <button type="submit" class="submitbutton">R3C0RD 3NTRY</button>
         </form>
     </div>
 @endsection

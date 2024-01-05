@@ -44,3 +44,7 @@ require __DIR__.'/auth.php';
 Route::get('/', [WelcomeController::class, 'index']);
 
 Route::resource('journals', JournalController::class);
+
+Route::get('/', function () {
+    return view('welcome'); // Assuming your welcome view is the home page
+})->name('home');
