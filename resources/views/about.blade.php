@@ -9,17 +9,10 @@
 <main>
 
 
-    <h1>C L 4 Y F 0 R M S
+    <h1>ABOUT ABOUT
         <br>
         クレイフォームズ
     </h1>
-
-    <p>o r g a n i z e  - y o u r -  s t o r y </p>
-
-    <a href="{{ route('journals.index') }}" class="beginbutton">B 3 G ! N</a>
-
-    <a href="{{ route('about') }}" class="beginbutton">A B 0 U T</a>
-
 
 </main>
 
