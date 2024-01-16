@@ -2,6 +2,8 @@
 
 @section('content')
     <body style="background-color: #a393eb;">
+
+
         <div> 
         
             <p>-----------------------------------------</p>

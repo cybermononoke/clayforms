@@ -13,7 +13,7 @@
     </h1>
 
     <p>
-        bleeding edge; we are made of clay.
+        bleeding edge
     </p>
 
 </main>

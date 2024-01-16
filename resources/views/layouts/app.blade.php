@@ -1,5 +1,6 @@
 <!-- resources/views/layouts/app.blade.php -->
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,17 +8,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js" defer></script>
+
+    <script src="{{ mix('js/alpine.js') }}" defer></script>
+    <link href="{{ asset('vendor/bladewind/css/animate.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" />
+    <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
+
+
+
 
     <title>CLAYFORMS</title>
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ mix('css/journals.css') }}">
     <style>
         body {
+            overflow: y-auto;
+
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 50px;
             background: url('{{ asset("images/grad.png") }}') no-repeat center center fixed;
+            background: linear-gradient();
             background-size: cover;
             display: grid;
             grid-template-rows: 1fr auto;
@@ -205,11 +218,48 @@
             text-decoration: none;
             border-radius: 5px;
         }
+
+
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 40px;
+            /* Adjust the distance from the button */
+            background-color: transparent;
+            /* Your desired background color */
+            border: 1px solid #4a5568;
+            /* Your desired border color */
+            border-radius: 4px;
+            z-index: 1000;
+            /* Ensure it appears above other elements */
+        }
+
+        .menu-link {
+            padding: 10px;
+            color: #deefd5;
+            /* Your desired text color */
+            text-decoration: none;
+            font-family: 'MYFONT', sans-serif;
+            /* Your font-family */
+        }
+
+        .menu-link:hover {
+            background-color: #47585C;
+            /* Your desired hover background color */
+        }
     </style>
+
+
 
 </head>
 
 <body>
+
+
+
+
 
 
     @include('partials.header')
@@ -225,6 +275,18 @@
 
 </body>
 
+
+
+    <!-- NAV MENU -->
+    <div x-data="{ open: false }">
+        <button @click="open = !open" class="home-button">M3NU</button>
+        <div x-show="open" class="menu-container">
+            <a href="/login" class="menu-link">L0G!N</a>
+            <a href="/home" class="menu-link">H0M3</a>
+            <a href="/force-logout" class="menu-link">L0G0UT</a>
+        </div>
+    </div>
+    <!-- NAV MENU -->
 
 
 
