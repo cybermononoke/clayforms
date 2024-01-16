@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WelcomeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +35,29 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
+Route::middleware(['auth'])->group(function () {
 
 
-Route::resource('journals', JournalController::class);
+    Route::resource('journals', JournalController::class);
+});
+
+
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/home', [WelcomeController::class, 'index'])->name('welcome');
+
+
+
+//force logout
+Route::get('/force-logout', function () {
+    Auth::logout();
+    return redirect('/');
+
+
+   
+    
+
+
+
+});

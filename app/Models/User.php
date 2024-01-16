@@ -43,8 +43,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function entries()
+    public function journals()
     {
-        return $this->hasMany(Entry::class);
+        return $this->hasMany(Journal::class);
     }
 }

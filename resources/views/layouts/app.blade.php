@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ mix('css/journals.css') }}">
     <style>
-
-    
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -211,23 +209,20 @@
 
 </head>
 
-
-
-
-
-
-
-
-
-
-
 <body>
+
+
     @include('partials.header')
     <div class="container">
         @yield('content')
     </div>
+
+
+
     <!-- Animated Background -->
     <div class="bg"></div>
+
+
 </body>
 
 

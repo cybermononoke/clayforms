@@ -10,9 +10,11 @@
 
 
     <h1>ABOUT ABOUT
-        <br>
-        クレイフォームズ
     </h1>
+
+    <p>
+        bleeding edge; we are made of clay.
+    </p>
 
 </main>
 
