@@ -2,6 +2,12 @@
 @include('layouts.createstyle')
 
 @section('content')
+<style>
+    body {
+        background: url('{{ asset("images/grad3.png") }}') no-repeat center center fixed;
+        background-repeat: repeat;
+    }
+</style>
     <div>
         <h1>R 3 C 0 R D</h1>
 

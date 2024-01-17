@@ -18,7 +18,7 @@
 
 
 
-
+@auth
     <title>CLAYFORMS</title>
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ mix('css/journals.css') }}">
@@ -29,7 +29,7 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 50px;
-            background: url('{{ asset("images/grad.png") }}') no-repeat center center fixed;
+            background-image: url('{{ asset(Auth::user()->background_image ?? "grad.png") }}');
             background: linear-gradient();
             background-size: cover;
             display: grid;
@@ -44,7 +44,7 @@
 
         h1 {
             font-family: 'MYFONT', sans-serif;
-            color: #deefd5;
+            color: #fff;
             font-size: 6em;
             margin-top: 100px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -52,7 +52,7 @@
 
         p {
             font-family: 'YOURFONT', sans-serif;
-            color: #deefd5;
+            color: #fff;
         }
 
         .bg {
@@ -135,7 +135,7 @@
             font-family: 'MYFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #deefd5;
+            color: #fff;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -149,7 +149,7 @@
             font-family: 'YOURFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #deefd5;
+            color: #fff;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -163,7 +163,7 @@
             font-family: 'MYFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #deefd5;
+            color: #fff;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -177,7 +177,7 @@
             font-family: 'MYFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #deefd5;
+            color: #fff;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -214,7 +214,7 @@
             left: 10px;
             padding: 10px;
             background-color: transparent;
-            color: #deefd5;
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
         }
@@ -238,7 +238,7 @@
 
         .menu-link {
             padding: 10px;
-            color: #deefd5;
+            color: #fff;
             /* Your desired text color */
             text-decoration: none;
             font-family: 'MYFONT', sans-serif;
@@ -250,7 +250,7 @@
             /* Your desired hover background color */
         }
     </style>
-
+@endauth
 
 
 </head>
@@ -281,9 +281,12 @@
     <div x-data="{ open: false }">
         <button @click="open = !open" class="home-button">M3NU</button>
         <div x-show="open" class="menu-container">
-            <a href="/login" class="menu-link">L0G!N</a>
             <a href="/home" class="menu-link">H0M3</a>
+            <a href="/journals" class="menu-link">J0URN4LS</a>
+            <a href="/login" class="menu-link">L0G!N</a>
+            <a href = "/options" class = "menu-link">0PT!0NS</a>
             <a href="/force-logout" class="menu-link">L0G0UT</a>
+            
         </div>
     </div>
     <!-- NAV MENU -->

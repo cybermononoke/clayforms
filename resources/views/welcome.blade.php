@@ -60,8 +60,6 @@ p {
 
     <p>o r g a n i z e - y o u r - s t o r y </p>
 
-    <a href="{{ route('register') }}" class="beginbutton">R 3 G ! S T 3 R</a>
-    <a href="{{ route('journals.index') }}" class="beginbutton">L 0 G ! N</a>
     <a href="{{ route('about') }}" class="beginbutton">A B 0 U T</a>
 
 

@@ -54,10 +54,4 @@ Route::get('/force-logout', function () {
     Auth::logout();
     return redirect('/');
 
-
-   
-    
-
-
-
 });
