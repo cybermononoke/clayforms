@@ -18,7 +18,7 @@
 
 
 
-@auth
+
     <title>CLAYFORMS</title>
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ mix('css/journals.css') }}">
@@ -29,12 +29,11 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 50px;
-            background-image: url('{{ asset(Auth::user()->background_image ?? "grad.png") }}');
+            background: url('{{ asset("images/color.png") }}') no-repeat center center fixed;
             background: linear-gradient();
             background-size: cover;
             display: grid;
             grid-template-rows: 1fr auto;
-            /* Adjust the second value as needed */
             min-height: 100vh;
         }
 
@@ -44,16 +43,19 @@
 
         h1 {
             font-family: 'MYFONT', sans-serif;
-            color: #fff;
+            color: #F8C8DC;
             font-size: 6em;
             margin-top: 100px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        
         }
 
         p {
             font-family: 'YOURFONT', sans-serif;
-            color: #fff;
+            color: #F8C8DC;
+
         }
+
+
 
         .bg {
             z-index: -1;
@@ -125,7 +127,7 @@
             bottom: 0;
             width: 100%;
             font-family: 'YOURFONT', sans-serif;
-            color: white;
+            color: #F8C8DC;
             text-align: center;
         }
 
@@ -135,7 +137,7 @@
             font-family: 'MYFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #fff;
+            color: #F8C8DC;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -143,13 +145,16 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
+           
         }
+
+
 
         .journallistbutton {
             font-family: 'YOURFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #fff;
+            color: #F8C8DC;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -163,7 +168,7 @@
             font-family: 'MYFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #fff;
+            color: #F8C8DC;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -177,7 +182,7 @@
             font-family: 'MYFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #fff;
+            color: #F8C8DC;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -185,7 +190,10 @@
             font-size: 36px;
             margin: 4px 2px;
             cursor: pointer;
+            
         }
+
+      
 
 
         .title-input {
@@ -214,7 +222,7 @@
             left: 10px;
             padding: 10px;
             background-color: transparent;
-            color: #fff;
+            color: #F8C8DC;
             text-decoration: none;
             border-radius: 5px;
         }
@@ -238,7 +246,7 @@
 
         .menu-link {
             padding: 10px;
-            color: #fff;
+            color: #F8C8DC;
             /* Your desired text color */
             text-decoration: none;
             font-family: 'MYFONT', sans-serif;
@@ -247,10 +255,10 @@
 
         .menu-link:hover {
             background-color: #47585C;
-            /* Your desired hover background color */
+
         }
     </style>
-@endauth
+
 
 
 </head>
@@ -277,19 +285,18 @@
 
 
 
-    <!-- NAV MENU -->
-    <div x-data="{ open: false }">
-        <button @click="open = !open" class="home-button">M3NU</button>
-        <div x-show="open" class="menu-container">
-            <a href="/home" class="menu-link">H0M3</a>
-            <a href="/journals" class="menu-link">J0URN4LS</a>
-            <a href="/login" class="menu-link">L0G!N</a>
-            <a href = "/options" class = "menu-link">0PT!0NS</a>
-            <a href="/force-logout" class="menu-link">L0G0UT</a>
-            
-        </div>
+<!-- NAV MENU -->
+<div x-data="{ open: false }">
+    <button @click="open = !open" class="home-button">M3NU</button>
+    <div x-show="open" class="menu-container">
+        <a href="/home" class="menu-link">H0M3</a>
+        <a href="/journals" class="menu-link">J0URN4LS</a>
+        <a href="/login" class="menu-link">L0G!N</a>
+        <a href="/force-logout" class="menu-link">L0G0UT</a>
+
     </div>
-    <!-- NAV MENU -->
+</div>
+<!-- NAV MENU -->
 
 
 

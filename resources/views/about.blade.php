@@ -6,9 +6,14 @@
 @section('content')
 <main>
     <section>
-        <div class="hero-container">
-            <div class="environment"></div>
-            <h2 class="hero glitch layers" data-text="近設計"><span>近設計</span></h2>
+        <h1>
+            B3G!N THE R3C0RD!NG
+        </h1>
+            
+
+        <p>
+            records shall be kept but not dwelt upon. a service to those who come after; not before.
+        </p>
         </div>
     </section>
 </main>

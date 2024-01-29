@@ -25,27 +25,27 @@
         .title-input {
             outline: none;
             width: 100%;
-            color: #deefd5;
+            color: #F8C8DC;
         }
 
         .content-input {
             outline: none;
             width: 100%;
             height: 150px;
-            color: #deefd5;
+            color: #F8C8DC;
         }
 
         .title-label,
         .content-label {
             font-family: 'MYFONT', sans-serif;
-            color: #deefd5;
+            color: #F8C8DC;
         }
 
         .submitbutton {
             font-family: 'MYFONT', sans-serif;
             background-color: transparent;
             border: none;
-            color: #deefd5;
+            color: #F8C8DC;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -57,7 +57,7 @@
 
         div .journal-content {
             font-family: 'MYFONT', sans-serif;
-            color: #deefd5;
+            color: #F8C8DC;
             max-height: 150px;
             overflow-y: auto;
             position: relative;

@@ -4,7 +4,7 @@
 @section('content')
 <style>
     body {
-        background: url('{{ asset("images/grad3.png") }}') no-repeat center center fixed;
+        background: url('{{ asset("images/color.png") }}') no-repeat center center fixed;
         background-repeat: repeat;
     }
 </style>

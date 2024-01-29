@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'background-image',
+        'background_image',
     ];
 
     /**
@@ -48,4 +48,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Journal::class);
     }
+
+
+    public function preferences(){
+        return $this->hasOne(UserPreference::class)->withDefault();
+    }
+    
 }

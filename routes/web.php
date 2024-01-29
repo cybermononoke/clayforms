@@ -5,7 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\UserPreferenceController;
+use App\Http\Controllers\StuffController;
+use App\Models\UserPreference;
 use Illuminate\Support\Facades\Auth;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,5 +58,4 @@ Route::get('/home', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/force-logout', function () {
     Auth::logout();
     return redirect('/');
-
 });
