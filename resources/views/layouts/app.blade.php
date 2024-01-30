@@ -9,12 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+    
+
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js" defer></script>
 
     <script src="{{ mix('js/alpine.js') }}" defer></script>
     <link href="{{ asset('vendor/bladewind/css/animate.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
+
+    
+    <!-- Link for Karla font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap">
+    <!-- Link for Inconsolata font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
 
 
 
@@ -26,7 +34,7 @@
         body {
             overflow: y-auto;
 
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inconsolata', sans-serif;
             text-align: center;
             margin: 50px;
             background: url('{{ asset("images/color.png") }}') no-repeat center center fixed;
@@ -42,7 +50,7 @@
         }
 
         h1 {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             color: #F8C8DC;
             font-size: 6em;
             margin-top: 100px;
@@ -50,7 +58,7 @@
         }
 
         p {
-            font-family: 'YOURFONT', sans-serif;
+            font-family: 'Inconsolata', sans-serif;
             color: #F8C8DC;
 
         }
@@ -126,7 +134,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            font-family: 'YOURFONT', sans-serif;
+            font-family: 'Inconsolata', sans-serif;
             color: #F8C8DC;
             text-align: center;
         }
@@ -134,7 +142,7 @@
 
 
         .button {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             background-color: transparent;
             border: none;
             color: #F8C8DC;
@@ -151,7 +159,7 @@
 
 
         .journallistbutton {
-            font-family: 'YOURFONT', sans-serif;
+            font-family: 'Inconsolata', sans-serif;
             background-color: transparent;
             border: none;
             color: #F8C8DC;
@@ -165,7 +173,7 @@
         }
 
         .recordbutton {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             background-color: transparent;
             border: none;
             color: #F8C8DC;
@@ -179,7 +187,7 @@
         }
 
         .beginbutton {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             background-color: transparent;
             border: none;
             color: #F8C8DC;
@@ -197,7 +205,7 @@
 
 
         .title-input {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             background-color: transparent;
             border: 1px solid #ccc;
             padding: 5px;
@@ -205,7 +213,7 @@
         }
 
         .content-input {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             background-color: transparent;
             border: 1px solid #ccc;
             padding: 5px;
@@ -216,7 +224,7 @@
 
 
         .home-button {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             position: fixed;
             top: 10px;
             left: 10px;
@@ -249,7 +257,7 @@
             color: #F8C8DC;
             /* Your desired text color */
             text-decoration: none;
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             /* Your font-family */
         }
 
@@ -292,6 +300,7 @@
         <a href="/home" class="menu-link">H0M3</a>
         <a href="/journals" class="menu-link">J0URN4LS</a>
         <a href="/login" class="menu-link">L0G!N</a>
+        <a href ="/register" class="menu-link">R3G!ST3R</a>
         <a href="/force-logout" class="menu-link">L0G0UT</a>
 
     </div>

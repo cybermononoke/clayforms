@@ -6,13 +6,13 @@
 
         <div> 
         
-            <p>-----------------------------------------</p>
+            
             <form method="GET" action="{{ route('journals.create') }}">
                 <button type="submit" class="recordbutton">R 3 C 0 R D 3 N T R Y</button>
             </form>
         </div>
 
-        <p>-----------------------------------------</p>
+
 
         <div>
             <ul style="list-style-type: none; padding: 0;"> 
