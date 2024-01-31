@@ -5,9 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\UserPreferenceController;
-use App\Http\Controllers\StuffController;
-use App\Models\UserPreference;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -59,3 +57,20 @@ Route::get('/force-logout', function () {
     Auth::logout();
     return redirect('/');
 });
+
+
+//return redirect view
+Route::get('/redirview', function () {
+    return view('redirview');
+})->name('redirview');
+
+
+
+Route::get('/ak', function () {
+    return redirect()->route('redirview');
+});
+
+
+
+// routes/web.php
+Route::get('/user/status', [UserController::class, 'getStatus'])->name('user.status');

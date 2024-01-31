@@ -2,10 +2,18 @@
 <html lang="en">
 
 <head>
+
+    <!-- Link for Karla font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap">
+    <!-- Link for Inconsolata font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
+
+
+    
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Inconsolata, sans-serif;
         }
 
         .container {
@@ -37,12 +45,12 @@
 
         .title-label,
         .content-label {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             color: #F8C8DC;
         }
 
         .submitbutton {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             background-color: transparent;
             border: none;
             color: #F8C8DC;
@@ -56,7 +64,7 @@
         }
 
         div .journal-content {
-            font-family: 'MYFONT', sans-serif;
+            font-family: 'Karla', sans-serif;
             color: #F8C8DC;
             max-height: 150px;
             overflow-y: auto;

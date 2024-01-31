@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js" defer></script>
 
@@ -18,7 +18,7 @@
     <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
 
-    
+
     <!-- Link for Karla font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap">
     <!-- Link for Inconsolata font -->
@@ -54,7 +54,7 @@
             color: #F8C8DC;
             font-size: 6em;
             margin-top: 100px;
-        
+
         }
 
         p {
@@ -153,7 +153,7 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-           
+
         }
 
 
@@ -198,16 +198,13 @@
             font-size: 36px;
             margin: 4px 2px;
             cursor: pointer;
-            
+
         }
-
-      
-
 
         .title-input {
             font-family: 'Karla', sans-serif;
             background-color: transparent;
-            border: 1px solid #ccc;
+            border: 1px solid #F8C8DC;
             padding: 5px;
             margin-bottom: 10px;
         }
@@ -215,7 +212,7 @@
         .content-input {
             font-family: 'Karla', sans-serif;
             background-color: transparent;
-            border: 1px solid #ccc;
+            border: 1px solid #F8C8DC;
             padding: 5px;
             margin-bottom: 10px;
             resize: vertical;
@@ -242,27 +239,21 @@
             flex-direction: column;
             position: absolute;
             top: 40px;
-            /* Adjust the distance from the button */
             background-color: transparent;
-            /* Your desired background color */
-            border: 1px solid #4a5568;
-            /* Your desired border color */
+            border: 1px solid transparent;
             border-radius: 4px;
             z-index: 1000;
-            /* Ensure it appears above other elements */
         }
 
         .menu-link {
             padding: 10px;
             color: #F8C8DC;
-            /* Your desired text color */
             text-decoration: none;
             font-family: 'Karla', sans-serif;
-            /* Your font-family */
         }
 
         .menu-link:hover {
-            background-color: #47585C;
+            background-color: #1a1a1c;
 
         }
     </style>
@@ -294,14 +285,16 @@
 
 
 <!-- NAV MENU -->
-<div x-data="{ open: false }">
+<div x-data="{ open: false }" @click.away="open = false">
     <button @click="open = !open" class="home-button">M3NU</button>
     <div x-show="open" class="menu-container">
         <a href="/home" class="menu-link">H0M3</a>
         <a href="/journals" class="menu-link">J0URN4LS</a>
         <a href="/login" class="menu-link">L0G!N</a>
-        <a href ="/register" class="menu-link">R3G!ST3R</a>
+        <a href="/register" class="menu-link">R3G!ST3R</a>
         <a href="/force-logout" class="menu-link">L0G0UT</a>
+
+        <a href="{{ route('user.status') }}" class="menu-link">ST4TUS</a>
 
     </div>
 </div>
