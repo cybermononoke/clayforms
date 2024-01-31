@@ -9,7 +9,7 @@
     }
 </style>
     <div>
-        <h1>R 3 C 0 R D</h1>
+        <h1>/record</h1>
 
         <form method="POST" action="{{ route('journals.store') }}">
             @csrf

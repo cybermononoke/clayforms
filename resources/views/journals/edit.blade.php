@@ -3,7 +3,7 @@
 
 @section('content')
     <div>
-        <h1>3D ! T</h1>
+        <h1>/edit</h1>
 
         <form method="POST" action="{{ route('journals.update', $journal->id) }}">
             @csrf

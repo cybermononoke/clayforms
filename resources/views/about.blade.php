@@ -7,16 +7,20 @@
 <main>
     <section>
         <h1>
-            cm presents
+          /description
         </h1>
             
 
         <p>
-            a simple recordkeeping app <br>
-            meant to provide <br>
-            a peaceful <br>
-            place to record <br>
-            your history
+            BEGIN <br>
+            cybermononoke is a single-celled organism <br>
+            living on either end of The Country <br>
+            at Any Given Time <br>
+            BREAK <br>
+            this is a simple app <br>
+            meant to allow you to record your history. <br>
+            END
+
         </p>
         </div>
     </section>

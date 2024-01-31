@@ -6,9 +6,11 @@
 
         <div> 
         
-            
+            <h1>
+                /record
+            </h1>
             <form method="GET" action="{{ route('journals.create') }}">
-                <button type="submit" class="recordbutton">R 3 C 0 R D 3 N T R Y</button>
+                <button type="submit" class="recordbutton">>new record<</button>
             </form>
         </div>
 

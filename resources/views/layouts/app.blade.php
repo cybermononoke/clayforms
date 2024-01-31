@@ -36,7 +36,7 @@
 
             font-family: 'Inconsolata', sans-serif;
             text-align: center;
-            margin: 50px;
+            padding: 50px;
             background: url('{{ asset("images/color.png") }}') no-repeat center center fixed;
             background: linear-gradient();
             background-size: cover;
