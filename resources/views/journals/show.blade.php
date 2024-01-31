@@ -36,9 +36,17 @@
 
 <div class="footer">
     @if ($journal->created_at)
-    <p>Created on: {{ $journal->created_at->format('Y-m-d H:i:s') }}</p>
+    <p>created at {{ $journal->created_at->format('Y-m-d H:i:s') }}</p>
     @else
     <p>creation date not available</p>
+    @endif
+
+
+
+    @if ($journal->belongs_to)
+    <p> by {{$journal->user->name}}</p>
+    @else
+    <p> creator not available </>
     @endif
 </div>
 @endsection

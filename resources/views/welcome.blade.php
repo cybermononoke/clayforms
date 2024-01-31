@@ -18,9 +18,9 @@
         クレイフォームズ
     </h1>
 
-    <p>o r g a n i z e - y o u r - s t o r y </p>
+    <p>organize your history</p>
 
-    <a href="{{ route('about') }}" class="beginbutton">A B 0 U T</a>
+    
 
 
 </main>

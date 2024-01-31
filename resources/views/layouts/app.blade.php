@@ -289,9 +289,10 @@
     <button @click="open = !open" class="home-button">M3NU</button>
     <div x-show="open" class="menu-container">
         <a href="/home" class="menu-link">H0M3</a>
-        <a href="/journals" class="menu-link">J0URN4LS</a>
+        <a href="/journals" class="menu-link">R3C0RDS</a>
         <a href="/login" class="menu-link">L0G!N</a>
         <a href="/register" class="menu-link">R3G!ST3R</a>
+        <a href="{{ route('about') }}" class="menu-link">AB0UT</a>
         <a href="/force-logout" class="menu-link">L0G0UT</a>
 
         <a href="{{ route('user.status') }}" class="menu-link">ST4TUS</a>

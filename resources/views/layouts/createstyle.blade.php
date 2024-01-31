@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
 
 
-    
+
     <style>
         body {
             margin: 0;
@@ -66,7 +66,7 @@
         div .journal-content {
             font-family: 'Karla', sans-serif;
             color: #F8C8DC;
-            max-height: 150px;
+
             overflow-y: auto;
             position: relative;
         }

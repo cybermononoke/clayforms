@@ -7,12 +7,16 @@
 <main>
     <section>
         <h1>
-            B3G!N THE R3C0RD!NG
+            cm presents
         </h1>
             
 
         <p>
-            records shall be kept but not dwelt upon. a service to those who come after; not before.
+            a simple recordkeeping app <br>
+            meant to provide <br>
+            a peaceful <br>
+            place to record <br>
+            your history
         </p>
         </div>
     </section>

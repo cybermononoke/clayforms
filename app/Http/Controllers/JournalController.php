@@ -10,17 +10,17 @@ class JournalController extends Controller
 {
     public function index()
     {
-        $user = auth ()-> user();
-        $journals =Journal::where('user_id',$user->id)
+        $user = auth()->user();
+        $journals = Journal::where('user_id', $user->id)
+            ->with('user')
             ->orderBy('created_at', 'desc')
             ->get();
-        
-        return view('journals.index', compact('journals'));
 
+        return view('journals.index', compact('journals'));
     }
 
 
-    
+
     public function create()
     {
         return view('journals.create');
@@ -33,17 +33,18 @@ class JournalController extends Controller
             'title' => 'required|max:255',
             'content' => 'required',
         ]);
-    
+
         // Associate the created journal with the authenticated user
         $user = auth()->user();
         $journal = new Journal($validatedData);
         $journal->user()->associate($user);
+
         $journal->save();
-    
+
         return redirect()->route('journals.index')
             ->with('success', 'Journal entry created successfully!');
     }
-    
+
 
 
     public function show($id)
