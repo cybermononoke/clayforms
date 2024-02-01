@@ -1,6 +1,5 @@
-
 <x-guest-layout>
-<link href="{{ asset('resources/css/rings.css') }}" rel="stylesheet" />
+    <link href="{{ asset('resources/css/rings.css') }}" rel="stylesheet" />
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -22,10 +21,7 @@
         <div class="mt-4">
             <x-input-label for="password" :value="__('password')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
@@ -34,17 +30,17 @@
         <div class="mt-4">
             <x-input-label for="password_confirmation" :value="__('confirm password')" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+            <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md" href="{{ route('login') }}">
+            <a class="underline text-sm custom-color hover:custom-color rounded-md" href="{{ route('login') }}">
                 {{ __('already registered') }}
             </a>
+
+
 
             <x-primary-button class="ms-4">
                 {{ __('Register') }}
@@ -52,6 +48,3 @@
         </div>
     </form>
 </x-guest-layout>
-
-
-

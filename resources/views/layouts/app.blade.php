@@ -207,8 +207,18 @@
             border: 1px solid #F8C8DC;
             padding: 5px;
             margin-bottom: 10px;
+            border-color: #F8C8DC;
         }
 
+        .title-input:focus {
+
+            outline: none;
+
+        }
+
+     
+
+        /* focus:border-pink-500 focus:outline-none focus:ring-0 */
         .content-input {
             font-family: 'Karla', sans-serif;
             background-color: transparent;
@@ -255,6 +265,12 @@
         .menu-link:hover {
             background-color: #1a1a1c;
 
+        }
+
+
+
+        *:focus {
+            outline: 0;
         }
     </style>
 

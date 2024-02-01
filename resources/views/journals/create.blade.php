@@ -7,6 +7,9 @@
         background: url('{{ asset("images/color.png") }}') no-repeat center center fixed;
         background-repeat: repeat;
     }
+    *:focus {
+        outline: none;
+    }
 </style>
     <div>
         <h1>/record</h1>

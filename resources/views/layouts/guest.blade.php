@@ -23,21 +23,31 @@
 </head>
 
 <style>
-        body {
-            color: #F8C8DC;
-            background-color: #1b1c1e;
-        }
+    body {
+        color: #F8C8DC;
+        background-color: #1b1c1e;
+    }
 
-        /* Assuming your input has a class named 'input' */
-        .input:focus {
-            border-color: #FFF;
-            /* Change to the desired border color */
-            outline: none;
-            /* Remove the default outline */
-            box-shadow: none;
-            /* Remove any box shadow */
-        }
-    </style>
+    /* Assuming your input has a class named 'input' */
+    .input:focus {
+        border-color: #FFF;
+        /* Change to the desired border color */
+        outline: none;
+        /* Remove the default outline */
+        box-shadow: none;
+        /* Remove any box shadow */
+    }
+
+    .custom-color {
+        color: #F8C8DC;
+        /* Set the desired color */
+    }
+
+    .custom-color:hover {
+        color: #F8C8DC;
+        /* Set the same color for hover state */
+    }
+</style>
 
 <body>
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-transparent">
