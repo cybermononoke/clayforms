@@ -1,5 +1,0 @@
-/* Change focus ring color */
-:focus {
-    outline: 2px solid #F8C8DC !important;
-    outline-offset: 2px; /* Optional: Add some padding to the outline */
-}
