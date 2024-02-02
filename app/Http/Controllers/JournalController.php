@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Journal;
-
+use Illuminate\Http\Request;
 
 class JournalController extends Controller
 {
@@ -19,13 +18,10 @@ class JournalController extends Controller
         return view('journals.index', compact('journals'));
     }
 
-
-
     public function create()
     {
         return view('journals.create');
     }
-
 
     public function store(Request $request)
     {
@@ -45,21 +41,19 @@ class JournalController extends Controller
             ->with('success', 'Journal entry created successfully!');
     }
 
-
-
     public function show($id)
     {
         $journal = Journal::findOrFail($id);
+
         return view('journals.show', compact('journal'));
     }
-
 
     public function edit($id)
     {
         $journal = Journal::findOrFail($id);
+
         return view('journals.edit', compact('journal'));
     }
-
 
     public function update(Request $request, $id)
     {
@@ -73,7 +67,6 @@ class JournalController extends Controller
         return redirect()->route('journals.index')
             ->with('success', 'Journal entry updated successfully!');
     }
-
 
     public function destroy($id)
     {

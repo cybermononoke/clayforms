@@ -272,8 +272,29 @@
         *:focus {
             outline: 0;
         }
+
+        .status-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        padding: 10px;
+     
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
     </style>
 
+     
+<div class="status-container">
+    <p>ST4TUS</p>
+
+    @if ($isLoggedIn)
+        <p>logged in as {{ $user->name }}</p>
+    @else
+        <p>not logged in</p>
+    @endif
+</div>
 
 
 </head>
@@ -310,8 +331,6 @@
         <a href="/register" class="menu-link">R3G!ST3R</a>
         <a href="{{ route('about') }}" class="menu-link">AB0UT</a>
         <a href="/force-logout" class="menu-link">L0G0UT</a>
-
-        <a href="{{ route('user.status') }}" class="menu-link">ST4TUS</a>
 
     </div>
 </div>

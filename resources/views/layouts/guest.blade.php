@@ -39,12 +39,12 @@
     }
 
     .custom-color {
-        color: #F8C8DC;
+        color: #3b3c40;
         /* Set the desired color */
     }
 
     .custom-color:hover {
-        color: #F8C8DC;
+        color: #3b3c40;
         /* Set the same color for hover state */
     }
 </style>

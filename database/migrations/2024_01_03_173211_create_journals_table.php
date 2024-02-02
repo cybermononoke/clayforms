@@ -16,10 +16,9 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->timestamps();
-            $table ->foreignID('user_id')->constrained();
+            $table->foreignID('user_id')->constrained();
         });
     }
-    
 
     /**
      * Reverse the migrations.

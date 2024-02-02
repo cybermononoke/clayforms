@@ -49,9 +49,8 @@ class User extends Authenticatable
         return $this->hasMany(Journal::class);
     }
 
-
-    public function preferences(){
+    public function preferences()
+    {
         return $this->hasOne(UserPreference::class)->withDefault();
     }
-    
 }

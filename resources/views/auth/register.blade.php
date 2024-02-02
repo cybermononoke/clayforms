@@ -1,3 +1,4 @@
+
 <x-guest-layout>
     <link href="{{ asset('resources/css/rings.css') }}" rel="stylesheet" />
     <form method="POST" action="{{ route('register') }}">

@@ -1,14 +1,12 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\JournalController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\JournalController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Auth;
-
-
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,40 +35,30 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
 Route::middleware(['auth'])->group(function () {
-
 
     Route::resource('journals', JournalController::class);
 });
-
-
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/home', [WelcomeController::class, 'index'])->name('welcome');
 
-
-
 //force logout
 Route::get('/force-logout', function () {
     Auth::logout();
+
     return redirect('/');
 });
-
 
 //return redirect view
 Route::get('/redirview', function () {
     return view('redirview');
 })->name('redirview');
 
-
-
 Route::get('/ak', function () {
     return redirect()->route('redirview');
 });
-
-
 
 // routes/web.php
 Route::get('/user/status', [UserController::class, 'getStatus'])->name('user.status');
