@@ -5,6 +5,7 @@ use App\Http\Controllers\JournalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
+use App\http\Controllers\JournalPromptController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -62,3 +63,6 @@ Route::get('/ak', function () {
 
 // routes/web.php
 Route::get('/user/status', [UserController::class, 'getStatus'])->name('user.status');
+
+
+Route::get('/random-prompt', [JournalPromptController::class, 'getRandomPrompt'])->name('random.prompt');

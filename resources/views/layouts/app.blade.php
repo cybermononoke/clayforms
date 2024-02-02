@@ -156,6 +156,21 @@
 
         }
 
+        .button2 {
+            font-family: 'Inconsolata', sans-serif;
+            background-color: transparent;
+            border: none;
+            color: #F8C8DC;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+
+        }
+
 
 
         .journallistbutton {
@@ -185,6 +200,7 @@
             margin: 4px 2px;
             cursor: pointer;
         }
+
 
         .beginbutton {
             font-family: 'Karla', sans-serif;
@@ -327,9 +343,10 @@
     <div x-show="open" class="menu-container">
         <a href="/home" class="menu-link">H0M3</a>
         <a href="/journals" class="menu-link">R3C0RDS</a>
+        <a href="/random-prompt" class="menu-link">PR0MPT5</a>
         <a href="/login" class="menu-link">L0G!N</a>
         <a href="/register" class="menu-link">R3G!ST3R</a>
-        <a href="{{ route('about') }}" class="menu-link">AB0UT</a>
+        <a href="{{ route('about') }}" class="menu-link">4B0UT</a>
         <a href="/force-logout" class="menu-link">L0G0UT</a>
 
     </div>
