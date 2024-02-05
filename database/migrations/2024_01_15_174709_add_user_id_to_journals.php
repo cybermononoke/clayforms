@@ -10,11 +10,14 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up()
-    {
-        Schema::table('journals', function (Blueprint $table) {
-            $table->foreignId('user_id')->nullable()->constrained();
-        });
-    }
+{
+    Schema::table('journals', function (Blueprint $table) {
+        if (!Schema::hasColumn('journals', 'user_id')) {
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+        }
+    });
+}
+
 
     /**
      * Reverse the migrations.

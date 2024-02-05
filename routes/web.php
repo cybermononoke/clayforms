@@ -5,11 +5,14 @@ use App\Http\Controllers\JournalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
-use App\http\Controllers\JournalPromptController;
+use App\Http\Controllers\JournalPromptController;
+use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
+
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -66,3 +69,37 @@ Route::get('/user/status', [UserController::class, 'getStatus'])->name('user.sta
 
 
 Route::get('/random-prompt', [JournalPromptController::class, 'getRandomPrompt'])->name('random.prompt');
+
+
+
+
+
+//Unauthenticated Route
+Route::get('/admin/posts', [PostController::class, 'index'])->name('admin.posts.index');
+    Route::get('/admin/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
+    Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts.store');
+    Route::get('/admin/posts/{post}', [PostController::class, 'show'])->name('admin.posts.show');
+    Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
+    Route::put('/admin/posts/{post}', [PostController::class, 'update'])->name('admin.posts.update');
+    Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('admin.posts.destroy');
+
+
+
+
+
+
+
+
+//
+Route::get('/assign-role/{userId}', function ($userId) {
+    $user = User::find($userId);
+
+    if (!$user) {
+        return "User not found";
+    }
+
+    $user->role = 'admin';
+    $user->save();
+
+    return "Role assigned successfully";
+});

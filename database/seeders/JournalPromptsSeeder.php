@@ -14,17 +14,17 @@ class JournalPromptsSeeder extends Seeder
      */
     public function run()
     {
-        // Define an array of sample prompts
+        
         $prompts = [
-            'What are three things you are grateful for today?',
-            'Write about a time when you overcame a challenge.',
-            'Describe your ideal day from start to finish.',
-            'Reflect on a mistake you made and what you learned from it.',
-            'Write a letter to your future self.',
+            'write about the worst nightmare you had',
+            'what is the first song you remember hearing as a child?',
+            'write about a book you enjoyed',
+            'reflect on your first memory of eating fish',
+            'write a letter to your past self',
             // Add more prompts as needed
         ];
 
-        // Loop through each prompt and insert it into the database
+      
         foreach ($prompts as $prompt) {
             DB::table('journal_prompts')->insert([
                 'prompt' => $prompt,
