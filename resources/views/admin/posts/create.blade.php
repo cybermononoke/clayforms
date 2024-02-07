@@ -1,20 +1,32 @@
-<!-- resources/views/admin/posts/create.blade.php -->
-
 @extends('layouts.app')
+@include('layouts.createstyle')
 
 @section('content')
-    <h1>Create New Post</h1>
+<style>
+    body {
+        background: url('{{ asset("images/color.png") }}') no-repeat center center fixed;
+        background-repeat: repeat;
+    }
+    /* Use box-shadow to create a custom focus effect */
+    .title-input:focus,
+    .content-input:focus {
+        box-shadow: 0 0 0 2px #F8C8DC; /* Create a pink shadow effect */
+        border: 1px solid transparent; /* Remove default border */
+    }
+</style>
+    <div>
+        <h1>/admin record</h1>
 
-    <form action="{{ route('admin.posts.store') }}" method="POST">
-        @csrf
-        <div>
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title" class= "">
-        </div>
-        <div>
-            <label for="content">Content:</label>
-            <textarea name="content" id="content" rows="5"></textarea>
-        </div>
-        <button type="submit">Create Post</button>
-    </form>
+        <form method="POST" action="{{ route('admin.posts.store') }}">
+            @csrf
+
+            <label for="title" class="title-label">T ! T L 3</label>
+            <input type="text" name="title" class="title-input" required>
+
+            <label for="content" class="content-label">C 0 N T 3 N T</label>
+            <textarea name="content" class="content-input" required></textarea>
+
+            <button type="submit" class="submitbutton">R3C0RD 3NTRY</button>
+        </form>
+    </div>
 @endsection

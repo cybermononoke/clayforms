@@ -1,0 +1,31 @@
+@extends ('layouts.app')
+
+@section ('content')
+
+<h1 class="page-title">{{ $post->title }}</h1>
+<p class="content">{{ $post->content }}</p>
+
+
+
+<h2 class="comments">Comments</h2>
+@foreach ($post->comments as $comment)
+    <div class="comment">
+        <strong class="commenter-name">{{ $comment->commenter_name }}</strong>
+        <p class="comment-text">{{ $comment->comment_text }}</p>
+    </div>
+@endforeach
+
+<form class="comment-form" action="{{ route('comments.store', $post) }}" method="post">
+    @csrf
+    <div>
+        <label for="commenter_name"class = "content-input">Your Name:</label>
+        <input type="text" name="commenter_name" id="commenter_name">
+    </div>
+    <div>
+        <label for="comment_text" class = "content-input">Comment:</label>
+        <textarea name="comment_text" id="comment_text" cols="30" rows="5"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+@endsection

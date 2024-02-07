@@ -60,6 +60,7 @@
         p {
             font-family: 'Inconsolata', sans-serif;
             color: #F8C8DC;
+            font-size: 16px;
 
         }
 
@@ -232,7 +233,7 @@
 
         }
 
-     
+
 
         /* focus:border-pink-500 focus:outline-none focus:ring-0 */
         .content-input {
@@ -290,27 +291,150 @@
         }
 
         .status-container {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: transparent;
-        padding: 10px;
-     
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            padding: 10px;
 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+
+        /* STUFF */
+
+        /* Style for the h1 element */
+        h1 {
+            font-family: 'Karla', sans-serif;
+            color: #F8C8DC;
+            font-size: 6em;
+            margin-top: 100px;
+
+        }
+
+        /* Style for the "Create New Post" button */
+        .record-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #F8C8DC;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Style for the list of posts */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 36px;
+        }
+
+        /* Style for each post item */
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Style for links within posts */
+        a {
+            color: #F8C8DC;
+            text-decoration: none;
+        }
+
+        /* Style for links within posts when hovered */
+        a:hover {
+            text-decoration: underline;
+        }
+        
+
+
+        /* STYLESTUFF */
+
+    
+
+        /* Style for the h1 element */
+       
+
+        /* Style for the main content area */
+        .content {
+            margin-bottom: 20px;
+        }
+
+        /* Style for comments */
+        .comments {
+            margin-bottom: 20px;
+        }
+
+        /* Style for commenter name */
+        .commenter-name {
+            font-weight: bold;
+        }
+
+        /* Style for comment text */
+        .comment-text {
+            margin-bottom: 10px;
+        }
+
+        /* Style for the form */
+        .comment-form {
+            margin-bottom: 20px;
+            background: transparent;
+        }
+
+        /* Style for form labels */
+        .comment-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Style for form inputs */
+        .comment-form input[type="text"],
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px transparent;
+            border-radius: 5px;
+            background: transparent;
+        }
+
+        /* Style for form button */
+        .comment-form button {
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #F8C8DC;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style for form button on hover */
+        .comment-form button:hover {
+            background-color: #0056b3;
+        }
     </style>
 
-     
-<div class="status-container">
-    <p>ST4TUS</p>
 
-    @if ($isLoggedIn)
+
+
+
+
+
+
+
+
+
+    <div class="status-container">
+        <p>ST4TUS</p>
+
+        @if ($isLoggedIn)
         <p>logged in as {{ $user->name }}</p>
-    @else
+        @else
         <p>not logged in</p>
-    @endif
-</div>
+        @endif
+    </div>
 
 
 </head>
@@ -348,6 +472,7 @@
         <a href="/register" class="menu-link">R3G!ST3R</a>
         <a href="{{ route('about') }}" class="menu-link">4B0UT</a>
         <a href="/force-logout" class="menu-link">L0G0UT</a>
+        <a href="/admin/posts" class="menu-link">4DM!N P0STS</a>
 
     </div>
 </div>

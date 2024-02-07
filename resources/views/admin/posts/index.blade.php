@@ -3,17 +3,29 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Admin Posts</h1>
+<h1 class="page-title">/admin posts</h1>
 
-    <a href="{{ route('admin.posts.create') }}">Create New Post</a>
 
-    @if ($posts->isEmpty())
+@can ('create-post')
+<a href="{{ route('admin.posts.create') }}" class="recordbutton">>new post< </a>
+        @endcan
+
+
+        <br>
+        @if ($posts->isEmpty())
         <p>No posts found.</p>
-    @else
-        <ul>
+        @else
+        <ul class="post-list" style="text-align: left;">
             @foreach ($posts as $post)
-                <li><a href="{{ route('admin.posts.show', $post) }}">{{ $post->title }}</a></li>
+            <li>
+                <a href="{{ route('admin.posts.show', $post) }}"># {{ $post->title }}</a>
+                @if ($post->created_at)
+                <p>Created at {{ $post->created_at->format('Y-m-d') }}</p>
+                @else
+                <p>Creation date not available</p>
+                @endif
+            </li>
             @endforeach
         </ul>
-    @endif
-@endsection
+        @endif
+        @endsection

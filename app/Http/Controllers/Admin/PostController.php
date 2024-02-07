@@ -6,26 +6,42 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {
-    public function index(){
-        $posts = Post::where('user_id', auth()->id())->get();
+    public function index()
+    {
+        $posts = Post::where('user_id', auth()->id())
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-        return view ('admin.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts'));
     }
 
-    public function show(Post $post){
+
+
+
+
+
+
+
+
+
+
+    public function show(Post $post)
+    {
         $post->load('comments');
 
-        return view ('admin.posts.show', compact('post'));
+        return view('admin.posts.show', compact('post'));
     }
 
-    public function boot(){
+    public function boot()
+    {
         $this->registerPolicies();
 
-        Gate::define('update-post', function ($user, $post){
+        Gate::define('update-post', function ($user, $post) {
             return $post->isAdmin($user->id);
         });
     }
@@ -34,16 +50,13 @@ class PostController extends Controller
 
     //ADMIN-PROTECTED ROUTES (add more-CrUDE is for admin)
 
-    public function update(Request $request, Post $post){
-        if (gate::denies('update-post', $post)){
+    //update functionality
+    public function update(Request $request, Post $post)
+    {
+        if (gate::denies('update-post', $post)) {
             abort(403, 'unauthorized action');
         }
-
-        //update functionality
     }
-
-
-
 
 
     public function create()
@@ -63,4 +76,24 @@ class PostController extends Controller
 
 
 
+
+
+    public function store(Request $request)
+    {
+        // Validate the form data
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+        ]);
+
+        // Create a new post using the validated data
+        $post = new Post();
+        $post->title = $validatedData['title'];
+        $post->content = $validatedData['content'];
+        $post->user_id = auth()->id(); // Assuming you have a user_id column in your posts table
+        $post->save();
+
+        // Redirect to the index page or show page after creating the post
+        return redirect()->route('admin.posts.index')->with('success', 'Post created successfully');
+    }
 }

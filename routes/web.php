@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\JournalPromptController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -37,7 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::middleware(['auth'])->group(function () {
 
@@ -76,14 +77,20 @@ Route::get('/random-prompt', [JournalPromptController::class, 'getRandomPrompt']
 
 //Unauthenticated Route
 Route::get('/admin/posts', [PostController::class, 'index'])->name('admin.posts.index');
-    Route::get('/admin/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
-    Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts.store');
-    Route::get('/admin/posts/{post}', [PostController::class, 'show'])->name('admin.posts.show');
-    Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
-    Route::put('/admin/posts/{post}', [PostController::class, 'update'])->name('admin.posts.update');
-    Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('admin.posts.destroy');
+Route::get('/admin/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
+Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts.store');
+Route::get('/admin/posts/{post}', [PostController::class, 'show'])->name('admin.posts.show');
+Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
+Route::put('/admin/posts/{post}', [PostController::class, 'update'])->name('admin.posts.update');
+Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('admin.posts.destroy');
 
 
+
+
+
+Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts.store');
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 
 
