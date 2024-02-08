@@ -264,6 +264,7 @@
             text-decoration: none;
             border-radius: 5px;
             z-index: 1000;
+            font-size: 20px;
         }
 
 
@@ -285,6 +286,7 @@
             text-decoration: none;
             font-family: 'Karla', sans-serif;
             margin-right: 10px;
+            font-size: 20px;
         }
 
         .menu-link:hover {
@@ -306,8 +308,8 @@
             right: 20px;
             background-color: transparent;
             padding: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
+            font-size: 20px;
         }
 
 

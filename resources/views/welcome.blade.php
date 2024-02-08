@@ -13,14 +13,10 @@
 
 
 
-    <h1>C L 4 Y F 0 R M S
+    <h1>w e l c o m e
         <br>
         クレイフォームズ
     </h1>
-
-    <p>organize your history</p>
-
-    
 
 
 </main>

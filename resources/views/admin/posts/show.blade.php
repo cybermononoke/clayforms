@@ -5,14 +5,6 @@
 <h1>{{ $post->title }}</h1>
 <p>{{ $post->content }}</p>
 
-<!-- displays the comments -->
-<h1>Comments</h1>
-@foreach ($post->comments as $comment)
-<div>
-    <strong>{{ $comment->commenter_name }}</strong>
-    <p>{{ $comment->comment_text }}</p>
-</div>
-@endforeach
 
 <style>
     .commentername {
@@ -29,8 +21,6 @@
         background: transparent;
 
     }
-
-
     .comment_text:focus,
     .commenter_name:focus {
         box-shadow: 0 0 0 2px #F8C8DC; /* Create a pink shadow effect */
@@ -41,20 +31,22 @@
 </style>
 
 
-<!-- create new comments -->
 
-<form action="{{ route('comments.store', $post) }}" method="post">
+
+
+@can ('isAdmin')
+<!-- this should be hidden unless admin -->
+<a href="{{ route('admin.posts.edit', $post->id) }}" class="button">3D!T</a>
+
+<form method="POST" action="{{ route('admin.posts.destroy', $post->id) }}" style="display: inline-block;">
     @csrf
-    <div>
-        <label for="commenter_name" class="commentername">Your Name:</label>
-        <input type="text" name="commenter_name" id="commenter_name" class="commentername">
-    </div>
-    <div>
-        <label for="comment_text" class="commenttext">Comment:</label>
-        <textarea name="comment_text" id="comment_text" cols="30" rows="5" class="commenttext"></textarea>
-    </div>
-    <button type="submitbutton">Submit</button>
+    @method('DELETE')
+    <button type="submit" class="button" onclick="return confirm('erase history?')">D3STR0Y</button>
 </form>
+<!-- this should be hidden unless admin -->
+@endcan
+
+
 
 
 @endsection
