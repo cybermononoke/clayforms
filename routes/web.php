@@ -96,7 +96,6 @@ Route::post('/comments', [CommentController::class, 'store'])->name('comments.st
 
 
 
-
 //
 Route::get('/assign-role/{userId}', function ($userId) {
     $user = User::find($userId);
@@ -110,3 +109,5 @@ Route::get('/assign-role/{userId}', function ($userId) {
 
     return "Role assigned successfully";
 });
+
+

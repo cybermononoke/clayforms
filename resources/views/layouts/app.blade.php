@@ -27,6 +27,14 @@
 
 
 
+
+
+
+
+
+
+
+
     <title>CLAYFORMS</title>
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ mix('css/journals.css') }}">
@@ -246,9 +254,7 @@
 
         }
 
-
-        .home-button {
-            font-family: 'Karla', sans-serif;
+        .menu-button {
             position: fixed;
             top: 10px;
             left: 10px;
@@ -257,32 +263,34 @@
             color: #F8C8DC;
             text-decoration: none;
             border-radius: 5px;
+            z-index: 1000;
         }
 
 
-
         .menu-container {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
             background-color: transparent;
             border: 1px solid transparent;
             border-radius: 4px;
             z-index: 1000;
+            padding: 10px;
         }
 
         .menu-link {
+            display: inline-block;
             padding: 10px;
             color: #F8C8DC;
             text-decoration: none;
             font-family: 'Karla', sans-serif;
+            margin-right: 10px;
         }
 
         .menu-link:hover {
-            background-color: #1a1a1c;
-
+            background-color: transparent;
         }
+
 
 
 
@@ -290,16 +298,17 @@
             outline: 0;
         }
 
+
+
         .status-container {
             position: fixed;
             top: 20px;
             right: 20px;
             background-color: transparent;
             padding: 10px;
-
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
-
 
 
 
@@ -347,15 +356,15 @@
         a:hover {
             text-decoration: underline;
         }
-        
+
 
 
         /* STYLESTUFF */
 
-    
+
 
         /* Style for the h1 element */
-       
+
 
         /* Style for the main content area */
         .content {
@@ -425,18 +434,6 @@
 
 
 
-
-    <div class="status-container">
-        <p>ST4TUS</p>
-
-        @if ($isLoggedIn)
-        <p>logged in as {{ $user->name }}</p>
-        @else
-        <p>not logged in</p>
-        @endif
-    </div>
-
-
 </head>
 
 <body>
@@ -461,22 +458,36 @@
 
 
 
-<!-- NAV MENU -->
-<div x-data="{ open: false }" @click.away="open = false">
-    <button @click="open = !open" class="home-button">M3NU</button>
-    <div x-show="open" class="menu-container">
-        <a href="/home" class="menu-link">H0M3</a>
-        <a href="/journals" class="menu-link">R3C0RDS</a>
-        <a href="/random-prompt" class="menu-link">PR0MPT5</a>
-        <a href="/login" class="menu-link">L0G!N</a>
-        <a href="/register" class="menu-link">R3G!ST3R</a>
-        <a href="{{ route('about') }}" class="menu-link">4B0UT</a>
-        <a href="/force-logout" class="menu-link">L0G0UT</a>
-        <a href="/admin/posts" class="menu-link">4DM!N P0STS</a>
 
+
+    <!-- NAV MENU -->
+    <div x-data="{ open: false }" @click.away="open = false">
+        <template x-if="!open">
+            <button @click="open = true" class="menu-button">M3NU</button>
+        </template>
+        <div x-show="open" class="menu-container">
+            <a href="/home" class="menu-link" @click="open = false">H0M3</a>
+            <a href="/journals" class="menu-link" @click="open = false">R3C0RDS</a>
+            <a href="/random-prompt" class="menu-link" @click="open = false">PR0MPT5</a>
+            <a href="/login" class="menu-link" @click="open = false">L0G!N</a>
+            <a href="/register" class="menu-link" @click="open = false">R3G!ST3R</a>
+            <a href="{{ route('about') }}" class="menu-link" @click="open = false">4B0UT</a>
+            <a href="/force-logout" class="menu-link" @click="open = false">L0G0UT</a>
+            <a href="/admin/posts" class="menu-link" @click="open = false">4DM!N P0STS</a>
+        </div>
     </div>
-</div>
-<!-- NAV MENU -->
+    <!-- NAV MENU -->
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const menuLinks = document.querySelectorAll('.menu-link');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    document.querySelector('.menu-button').style.display = 'block';
+                });
+            });
+        });
+    </script>
 
 
 
