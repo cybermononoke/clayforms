@@ -28,25 +28,33 @@
         background-color: #1b1c1e;
     }
 
-    /* Assuming your input has a class named 'input' */
+    
     .input:focus {
         border-color: #FFF;
-        /* Change to the desired border color */
+       
         outline: none;
-        /* Remove the default outline */
+       
         box-shadow: none;
-        /* Remove any box shadow */
+       
     }
 
     .custom-color {
         color: #3b3c40;
-        /* Set the desired color */
     }
 
     .custom-color:hover {
         color: #3b3c40;
-        /* Set the same color for hover state */
+        
     }
+
+
+
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px #1b1c1e inset !important; /* Set the background color */
+        -webkit-text-fill-color: #F8C8DC !important; /* Set the text color */
+    }
+
+    
 </style>
 
 <body>

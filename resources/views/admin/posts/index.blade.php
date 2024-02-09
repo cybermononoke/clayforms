@@ -3,10 +3,10 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="page-title">/admin posts</h1>
+<h1 class="page-title">/posts</h1>
 
 
-@can ('create-post')
+@can ('isAdmin')
 <a href="{{ route('admin.posts.create') }}" class="recordbutton">>new post< </a>
         @endcan
 

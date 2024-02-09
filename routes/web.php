@@ -1,15 +1,15 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\JournalController;
+use App\Http\Controllers\JournalPromptController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\JournalPromptController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\Admin\PostController;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
 
@@ -68,12 +68,7 @@ Route::get('/ak', function () {
 // routes/web.php
 Route::get('/user/status', [UserController::class, 'getStatus'])->name('user.status');
 
-
 Route::get('/random-prompt', [JournalPromptController::class, 'getRandomPrompt'])->name('random.prompt');
-
-
-
-
 
 //Unauthenticated Route
 Route::get('/admin/posts', [PostController::class, 'index'])->name('admin.posts.index');
@@ -84,13 +79,15 @@ Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->name('a
 Route::put('/admin/posts/{post}', [PostController::class, 'update'])->name('admin.posts.update');
 Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('admin.posts.destroy');
 
-
-
-
-
 Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts.store');
 
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+
+
+
+Route::get('/aaa', function(){
+    return view ('aaa');
+});
 
 
 
@@ -100,14 +97,12 @@ Route::post('/comments', [CommentController::class, 'store'])->name('comments.st
 Route::get('/assign-role/{userId}', function ($userId) {
     $user = User::find($userId);
 
-    if (!$user) {
-        return "User not found";
+    if (! $user) {
+        return 'User not found';
     }
 
     $user->role = 'admin';
     $user->save();
 
-    return "Role assigned successfully";
+    return 'Role assigned successfully';
 });
-
-

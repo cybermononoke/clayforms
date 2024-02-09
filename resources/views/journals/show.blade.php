@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
 
 <style>
-    /* Apply font-family to .journal-content */
     .journal-content {
         font-family: 'Inconsolata', sans-serif; 
     }
@@ -14,6 +13,28 @@
 
 <div>
     <h1>{{ $journal->title }}</h1>
+
+    @if ($journal->user_id)
+          
+          @php
+              $creator = \App\Models\User::find($journal->user_id);
+          @endphp
+          @if ($creator)
+              <p> by {{ $creator->name }}</p>
+          @else
+              <p> Creator not available </p>
+          @endif
+      @else
+          <p> Creator not available </p>
+      @endif
+
+      @if ($journal->created_at)
+    <p>created at {{ $journal->created_at->format('Y-m-d H:i:s') }}</p>
+    @else
+    <p>creation date not available</p>
+    @endif
+
+
     <div class="journal-content">
         {{ $journal->content }}
     </div>
@@ -35,18 +56,17 @@
 </script>
 
 <div class="footer">
-    @if ($journal->created_at)
-    <p>created at {{ $journal->created_at->format('Y-m-d H:i:s') }}</p>
-    @else
-    <p>creation date not available</p>
-    @endif
 
 
 
-    @if ($journal->belongs_to)
+    <!-- @if ($journal->belongs_to)
     <p> by {{$journal->user->name}}</p>
     @else
     <p> creator not available </>
-    @endif
+    @endif -->
+
+
+ 
+
 </div>
 @endsection

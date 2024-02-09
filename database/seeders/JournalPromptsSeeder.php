@@ -14,7 +14,7 @@ class JournalPromptsSeeder extends Seeder
      */
     public function run()
     {
-        
+
         $prompts = [
             'write about the worst nightmare you had',
             'what is the first song you remember hearing as a child?',
@@ -24,7 +24,6 @@ class JournalPromptsSeeder extends Seeder
             // Add more prompts as needed
         ];
 
-      
         foreach ($prompts as $prompt) {
             DB::table('journal_prompts')->insert([
                 'prompt' => $prompt,

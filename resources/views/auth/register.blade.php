@@ -1,5 +1,12 @@
+@extends ('layouts.app')
 
 <x-guest-layout>
+
+    <div class="header text-center mb-8">
+        <h5 class="text-2xl font-bold">/register</h5>
+    </div>
+
+
     <link href="{{ asset('resources/css/rings.css') }}" rel="stylesheet" />
     <form method="POST" action="{{ route('register') }}">
         @csrf

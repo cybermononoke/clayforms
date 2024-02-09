@@ -1,12 +1,12 @@
 <?php
 
 //THIS HAS BAD CODE LMAO PUBLIC FUNCTION CREATE NEEDS HELLLLLP
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Post;
-use App\Models\Comment;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
@@ -17,8 +17,6 @@ class PostController extends Controller
 
         return view('admin.posts.index', compact('posts'));
     }
-
-
 
     public function show(Post $post)
     {
@@ -36,15 +34,12 @@ class PostController extends Controller
         });
     }
 
-
-    
     public function update(Request $request, Post $post)
     {
         if (gate::denies('update-post', $post)) {
             abort(403, 'unauthorized action');
         }
     }
-
 
     public function create()
     {
@@ -55,12 +50,6 @@ class PostController extends Controller
             return view('admin.posts.create');
         }
     }
-
-
-
-
-
-
 
     public function store(Request $request)
     {
@@ -78,10 +67,6 @@ class PostController extends Controller
         return redirect()->route('admin.posts.index')->with('success', 'Post created successfully');
     }
 
-
-
-
-
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
@@ -90,10 +75,4 @@ class PostController extends Controller
         return redirect()->route('admin.posts.index')
             ->with('success', 'Post deleted successfully!');
     }
-
-
-
-
-
-
 }

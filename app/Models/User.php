@@ -43,7 +43,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-        'role'=>'string',
+        'role' => 'string',
     ];
 
     public function journals()
@@ -56,8 +56,8 @@ class User extends Authenticatable
         return $this->hasOne(UserPreference::class)->withDefault();
     }
 
-
-    public function isAdmin(){
-        return $this->role ==='admin';
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
     }
 }

@@ -5,6 +5,7 @@
 <html lang="en">
 
 <head>
+    @stack('styles')
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -298,6 +299,7 @@
 
         *:focus {
             outline: 0;
+            color: #F8C8DC;
         }
 
 
@@ -462,34 +464,34 @@
 
 
 
-    <!-- NAV MENU -->
-    <div x-data="{ open: false }" @click.away="open = false">
-        <template x-if="!open">
-            <button @click="open = true" class="menu-button">M3NU</button>
-        </template>
-        <div x-show="open" class="menu-container">
-            <a href="/home" class="menu-link" @click="open = false">H0M3</a>
-            <a href="/journals" class="menu-link" @click="open = false">R3C0RDS</a>
-            <a href="/random-prompt" class="menu-link" @click="open = false">PR0MPT5</a>
-            <a href="/login" class="menu-link" @click="open = false">L0G!N</a>
-            <a href="/register" class="menu-link" @click="open = false">R3G!ST3R</a>
-            <a href="{{ route('about') }}" class="menu-link" @click="open = false">4B0UT</a>
-            <a href="/force-logout" class="menu-link" @click="open = false">L0G0UT</a>
-            <a href="/admin/posts" class="menu-link" @click="open = false">4DM!N P0STS</a>
-        </div>
-    </div>
-    <!-- NAV MENU -->
+<!-- NAV MENU -->
+<div x-data="{ open: false }" @click.away="open = false">
+    <template x-if="!open">
+        <button @click="open = true" class="menu-button">M3NU</button>
+    </template>
+    <div x-show="open" class="menu-container">
+        <a href="/home" class="menu-link" @click="open = false">H0M3</a>
+        <a href="/admin/posts" class="menu-link" @click="open = false">4LL P0STS</a>
+        <a href="/journals" class="menu-link" @click="open = false">J0URN4LS</a>
+        <a href="/login" class="menu-link" @click="open = false">L0G!N</a>
+        <a href="/register" class="menu-link" @click="open = false">R3G!ST3R</a>
+        <a href="/force-logout" class="menu-link" @click="open = false">L0G0UT</a>
+        <a href="{{ route('about') }}" class="menu-link" @click="open = false">4B0UT</a>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            const menuLinks = document.querySelectorAll('.menu-link');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    document.querySelector('.menu-button').style.display = 'block';
-                });
+    </div>
+</div>
+<!-- NAV MENU -->
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const menuLinks = document.querySelectorAll('.menu-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.menu-button').style.display = 'block';
             });
         });
-    </script>
+    });
+</script>
 
 
 

@@ -1,8 +1,27 @@
 @extends ('layouts.app')
 
+
+
+
 @section ('content')
 
 <h1>{{ $post->title }}</h1>
+
+@if ($post->user_id)
+
+@php
+$creator = \App\Models\User::find($post->user_id);
+@endphp
+@if ($creator)
+<p> by {{ $creator->name }}</p>
+@else
+<p> Creator not available </p>
+@endif
+@else
+<p> Creator not available </p>
+@endif
+
+
 <p>{{ $post->content }}</p>
 
 
@@ -21,12 +40,13 @@
         background: transparent;
 
     }
+
     .comment_text:focus,
     .commenter_name:focus {
-        box-shadow: 0 0 0 2px #F8C8DC; /* Create a pink shadow effect */
-        border: 1px solid transparent; /* Remove default border */
+        box-shadow: 0 0 0 2px #F8C8DC;
+        border: 1px solid transparent;
+        
     }
-
 
 </style>
 
@@ -45,8 +65,4 @@
 </form>
 <!-- this should be hidden unless admin -->
 @endcan
-
-
-
-
 @endsection
