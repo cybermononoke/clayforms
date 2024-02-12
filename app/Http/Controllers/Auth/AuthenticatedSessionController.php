@@ -28,8 +28,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        // Update the intended route to '/journals'
-        return redirect()->intended('/journals');
+        // update the intended route to '/home'
+        return redirect()->intended('/home');
     }
 
     /**

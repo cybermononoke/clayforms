@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             // Add the user_id column
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
 
             // Add a foreign key constraint to link the user_id column to the id column in the users table
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->nullable();
         });
     }
 

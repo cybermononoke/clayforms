@@ -3,8 +3,13 @@
 
 @section('content')
 <main>
-    <h1 class="welcome-animation">w e l c o m e</h1>
-    <!-- <h1>クレイフォームズ</h1> -->
+    <h1>w e l c o m e <br>
+        クレイフォームズ
+    </h1>
+
+
+
+
 </main>
 
 <!-- STATUS CONTAINER -->
@@ -16,6 +21,7 @@
     <p>not logged in</p>
     @endif
 </div>
+
 
 <div class="footer">
     <p>&copy; サイバーモノノケ cybermononoke. all rights ignored.</p>
@@ -32,6 +38,7 @@
             opacity: 0;
             transform: translateY(-50px);
         }
+
         100% {
             opacity: 1;
             transform: translateY(0);

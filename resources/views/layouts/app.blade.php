@@ -236,15 +236,11 @@
             border-color: #F8C8DC;
         }
 
-        .title-input:focus {
-
-            outline: none;
-
-        }
 
 
 
-        /* focus:border-pink-500 focus:outline-none focus:ring-0 */
+
+
         .content-input {
             font-family: 'Karla', sans-serif;
             background-color: transparent;
@@ -296,12 +292,13 @@
 
 
 
-
+        /* ok i think this is the line that made it work in the unextended versh? */
         *:focus {
             outline: 0;
             color: #F8C8DC;
         }
 
+        
 
 
         .status-container {
@@ -318,7 +315,7 @@
 
         /* STUFF */
 
-        /* Style for the h1 element */
+
         h1 {
             font-family: 'Karla', sans-serif;
             color: #F8C8DC;
@@ -327,7 +324,7 @@
 
         }
 
-        /* Style for the "Create New Post" button */
+
         .record-button {
             display: inline-block;
             padding: 10px 20px;
@@ -338,25 +335,25 @@
             margin-bottom: 20px;
         }
 
-        /* Style for the list of posts */
+
         ul {
             list-style-type: none;
             padding: 0;
             font-size: 36px;
         }
 
-        /* Style for each post item */
+
         li {
             margin-bottom: 10px;
         }
 
-        /* Style for links within posts */
+
         a {
             color: #F8C8DC;
             text-decoration: none;
         }
 
-        /* Style for links within posts when hovered */
+
         a:hover {
             text-decoration: underline;
         }
@@ -367,65 +364,23 @@
 
 
 
-        /* Style for the h1 element */
 
 
-        /* Style for the main content area */
+
+
         .content {
             margin-bottom: 20px;
         }
 
-        /* Style for comments */
-        .comments {
-            margin-bottom: 20px;
-        }
 
-        /* Style for commenter name */
-        .commenter-name {
-            font-weight: bold;
-        }
-
-        /* Style for comment text */
-        .comment-text {
-            margin-bottom: 10px;
-        }
-
-        /* Style for the form */
-        .comment-form {
-            margin-bottom: 20px;
-            background: transparent;
-        }
-
-        /* Style for form labels */
-        .comment-form label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        /* Style for form inputs */
-        .comment-form input[type="text"],
-        .comment-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px transparent;
-            border-radius: 5px;
-            background: transparent;
-        }
-
-        /* Style for form button */
-        .comment-form button {
-            padding: 10px 20px;
-            background-color: transparent;
-            color: #F8C8DC;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Style for form button on hover */
-        .comment-form button:hover {
-            background-color: #0056b3;
+        
+        .text-input:focus {
+            outline: none;
+            
+            border-color: pink;
+            
+            box-shadow: none;
+            
         }
     </style>
 
@@ -481,6 +436,8 @@
     </div>
 </div>
 <!-- NAV MENU -->
+
+
 
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
