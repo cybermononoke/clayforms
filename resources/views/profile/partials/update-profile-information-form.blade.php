@@ -4,8 +4,8 @@
             {{ __('Profile Information') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
+        <p class="mt-1 text-sm "style="color: #4c4d4f;">
+            {{ __("update your information") }}
         </p>
     </header>
 

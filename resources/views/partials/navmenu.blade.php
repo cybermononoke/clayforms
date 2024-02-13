@@ -50,7 +50,6 @@
         <!-- <a href="/journals" class="menu-link" @click="open = false">J0URN4LS</a> -->
         <a href="/login" class="menu-link" @click="open = false">L0G!N</a>
         <a href="/register" class="menu-link" @click="open = false">R3G!ST3R</a>
-        <a href="/force-logout" class="menu-link" @click="open = false">L0G0UT</a>
         <a href="/profile" class ="menu-link" @click="open = false"> PR0F!L3 </a>
         <a href="{{ route('about') }}" class="menu-link" @click="open = false">4B0UT</a>
 
