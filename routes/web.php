@@ -84,13 +84,6 @@ Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts
 
 
 
-Route::get('/aaa', function(){
-    return view ('aaa');
-});
-
-
-
-
 
 //
 Route::get('/assign-role/{userId}', function ($userId) {

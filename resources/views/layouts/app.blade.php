@@ -91,8 +91,6 @@
             visibility: visible;
         }
 
-
-
         @keyframes bg-animation {
             0% {
                 transform: translate(0, 0)
@@ -181,8 +179,6 @@
 
         }
 
-
-
         .journallistbutton {
             font-family: 'Inconsolata', sans-serif;
             background-color: transparent;
@@ -236,11 +232,6 @@
             border-color: #F8C8DC;
         }
 
-
-
-
-
-
         .content-input {
             font-family: 'Karla', sans-serif;
             background-color: transparent;
@@ -290,16 +281,10 @@
             background-color: transparent;
         }
 
-
-
-        /* ok i think this is the line that made it work in the unextended versh? */
         *:focus {
             outline: 0;
             color: #F8C8DC;
         }
-
-        
-
 
         .status-container {
             position: fixed;
@@ -310,8 +295,6 @@
             z-index: 1000;
             font-size: 20px;
         }
-
-
 
         /* STUFF */
 
@@ -353,89 +336,47 @@
             text-decoration: none;
         }
 
-
         a:hover {
             text-decoration: underline;
         }
-
-
-
-        /* STYLESTUFF */
-
-
-
-
-
-
 
         .content {
             margin-bottom: 20px;
         }
 
-
-        
         .text-input:focus {
             outline: none;
-            
+
             border-color: pink;
-            
+
             box-shadow: none;
-            
+
         }
     </style>
-
-
-
-
-
-
-
-
-
-
 </head>
 
+
+
+
+
+
+
 <body>
-
-
-
-
-
-
-    @include('partials.header')
-    <div class="container">
-        @yield('content')
-    </div>
-
-
-
     <!-- Animated Background -->
     <div class="bg"></div>
 
-
+    <!-- this one breaks everything lol -->
+    <!-- <div class="container flex justify-center items-center min-h-screen"> -->
+    <div>
+        @yield('content')
+    </div>
 </body>
 
 
 
 
+@include ('partials.navmenu')
 
-<!-- NAV MENU -->
-<div x-data="{ open: false }" @click.away="open = false">
-    <template x-if="!open">
-        <button @click="open = true" class="menu-button">M3NU</button>
-    </template>
-    <div x-show="open" class="menu-container">
-        <a href="/home" class="menu-link" @click="open = false">H0M3</a>
-        <a href="/admin/posts" class="menu-link" @click="open = false">4LL P0STS</a>
-        <a href="/journals" class="menu-link" @click="open = false">J0URN4LS</a>
-        <a href="/login" class="menu-link" @click="open = false">L0G!N</a>
-        <a href="/register" class="menu-link" @click="open = false">R3G!ST3R</a>
-        <a href="/force-logout" class="menu-link" @click="open = false">L0G0UT</a>
-        <a href="{{ route('about') }}" class="menu-link" @click="open = false">4B0UT</a>
-
-    </div>
-</div>
-<!-- NAV MENU -->
 
 
 
@@ -449,7 +390,5 @@
         });
     });
 </script>
-
-
 
 </html>

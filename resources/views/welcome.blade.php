@@ -12,15 +12,7 @@
 
 </main>
 
-<!-- STATUS CONTAINER -->
-<div class="status-container">
-    <p>ST4TUS</p>
-    @if ($isLoggedIn)
-    <p>logged in as {{ $user->name }}</p>
-    @else
-    <p>not logged in</p>
-    @endif
-</div>
+
 
 
 <div class="footer">

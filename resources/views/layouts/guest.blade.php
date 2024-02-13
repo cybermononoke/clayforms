@@ -30,13 +30,11 @@
 
     
     .input:focus {
-        border-color: #FFF;
-       
-        outline: none;
-       
-        box-shadow: none;
-       
-    }
+    border-color: #FFF; /* Set the border color */
+    outline: none; /* Remove the default browser outline */
+    box-shadow: none; /* Remove any box shadow */
+}
+
 
     .custom-color {
         color: #3b3c40;
@@ -63,7 +61,7 @@
 
         </div>
 
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-transparent shadow-md overflow-hidden sm:rounded-lg">
+        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-transparent overflow-hidden sm:rounded-lg">
             {{ $slot }}
         </div>
     </div>

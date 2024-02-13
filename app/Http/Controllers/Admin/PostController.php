@@ -20,7 +20,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        $post->load('comments');
+        // $post->load('comments');
 
         return view('admin.posts.show', compact('post'));
     }
@@ -46,7 +46,9 @@ class PostController extends Controller
         if (Gate::allows('create-post')) {
             return view('admin.posts.create');
         } else {
+            //actual line below
             // abort(403, 'Unauthorized action');
+            //current line that lets me do stuff even if not admin below
             return view('admin.posts.create');
         }
     }
