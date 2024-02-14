@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\JournalPromptController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
@@ -81,6 +82,10 @@ Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('
 Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts.store');
 
 
+//comment routes
+
+Route::post('/comments', 'CommentController@store')->name('comments.store');
+Route::delete('/comments/{id}', 'CommentController@destroy')->name('comments.destroy');
 
 
 

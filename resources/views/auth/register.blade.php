@@ -14,6 +14,12 @@
         <h5 class="text-2xl font-bold">/register</h5>
     </div>
 
+    <div class="flex items-center justify-center mt-4">
+            <a class="underline text-sm custom-color hover:custom-color rounded-md" href="{{ route('login') }}">
+                {{ __('already registered?') }}
+            </a>
+    </div>
+
     <link href="{{ asset('resources/css/rings.css') }}" rel="stylesheet" />
 
     <form method="POST" action="{{ route('register') }}">
@@ -52,9 +58,7 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm custom-color hover:custom-color rounded-md" href="{{ route('login') }}">
-                {{ __('already registered') }}
-            </a>
+
 
             <x-primary-button class="ms-4">
                 {{ __('Register') }}

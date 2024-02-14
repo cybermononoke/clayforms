@@ -3,7 +3,6 @@
 <x-guest-layout>
 
     <style>
-    
         h5 {
             font-family: 'Karla', sans-serif;
             color: #F8C8DC;
@@ -12,13 +11,29 @@
         .left-aligned-label {
             text-align: left;
         }
+
+        .register-link {
+            display: inline-block;
+
+            font-size: 0.875rem;
+            color: #F8C8DC;
+        }
+
+        .register-link:hover {
+            color: #F06292;
+        }
     </style>
-    
+
 
     <div class="header text-center mb-8">
         <h5 class="text-2xl font-bold">/login</h5>
     </div>
 
+    <div class="flex items-center justify-center mt-4">
+        <a class="underline text-sm custom-color hover:custom-color rounded-md" href="{{ route('register') }}">
+            {{ __('need to register?') }}
+        </a>
+    </div>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -47,10 +62,27 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
+
+
+
+
         <div class="flex justify-end">
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
     </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </x-guest-layout>

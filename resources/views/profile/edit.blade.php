@@ -15,7 +15,11 @@
     <a href="/force-logout" class="menu-link" @click="open = false">L0G0UT</a>
 </div>
 
-<div class="container">
+<div class="container flex justify-center">
+
+
+
+
     <div class="flex justify-center items-center min-h-screen">
         <div class="w-full sm:max-w-md">
             <x-slot name="header">
@@ -25,6 +29,7 @@
             </x-slot>
             <div class="py-12" style="color: #F8C8DC;">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+
                     <div class="p-4 sm:p-8 bg-transparent rounded-lg">
                         <div class="max-w-xl">
                             @include('profile.partials.update-profile-information-form')

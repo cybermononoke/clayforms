@@ -7,18 +7,17 @@
 <main>
     <section>
         <h1>
-          /description
+          /about
         </h1>
             
 
         <p>
             BEGIN <br>
             cybermononoke is a single-celled organism <br>
-            living on either end of The Country <br>
             at Any Given Time <br>
             BREAK <br>
             this is a simple app <br>
-            meant to allow you to record your history. <br>
+            that does stuff<br>
             END
 
         </p>
