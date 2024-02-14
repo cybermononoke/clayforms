@@ -1,14 +1,9 @@
 @extends ('layouts.app')
-
-
-
-
 @section ('content')
 
 <h1>{{ $post->title }}</h1>
 
 @if ($post->user_id)
-
 @php
 $creator = \App\Models\User::find($post->user_id);
 @endphp
@@ -20,9 +15,10 @@ $creator = \App\Models\User::find($post->user_id);
 @else
 <p> Creator not available </p>
 @endif
-
-
 <p>{{ $post->content }}</p>
+
+
+
 
 
 <style>
@@ -62,15 +58,21 @@ $creator = \App\Models\User::find($post->user_id);
         width: 100%;
         padding: 10px;
         margin-bottom: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid #F8C8DC;
         border-radius: 5px;
         resize: vertical;
         background: transparent;
 
     }
 
+    .comment {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #F8C8DC;
+    }
 
-    button[type="submit"] {
+
+    /* button[type="submit"] {
         background-color: transparent;
         color: white;
         padding: 10px 20px;
@@ -80,8 +82,8 @@ $creator = \App\Models\User::find($post->user_id);
     }
 
     button[type="submit"]:hover {
-        background-color: #45a049;
-    }
+        background-color: transparent;
+    } */
 </style>
 
 
@@ -105,29 +107,41 @@ $creator = \App\Models\User::find($post->user_id);
 COMMENT FUNCTIONALTIY
 --------------------------- -->
 
-<!-- form for create comments -->
 
-<form action="{{ route('comments.store') }}" method="POST">
-    @csrf
-    <input type="hidden" name="post_id" value="{{ $post->id }}">
-    <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-    <textarea name="content" rows="3" placeholder="Write your comment here..."></textarea>
-    <button type="submit">Submit Comment</button>
-</form>
 
-<!-- 
-showcomments -->
 <div class="comments">
-    <h3>Comments</h3>
-    @forelse ($post->comments as $comment)
+    <h1>/comments</h1>
+
+
+    <form action="{{ route('comments.store') }}" method="POST">
+        @csrf
+        <input type="hidden" name="post_id" value="{{ $post->id }}">
+        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+        <textarea name="content" rows="2" placeholder="say something..."></textarea>
+        <button type="submit" class="button" style="float: right;">Submit Comment</button>
+
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+
+
+    @forelse ($post->comments()->orderBy('created_at','desc')->get() as $comment)
     <div class="comment">
         <p><strong>{{ $comment->user->name }}</strong>: {{ $comment->content }}</p>
+        <p class="comment-date">{{ $comment->created_at->format('M d, Y') }}</p> <!-- Add this line -->
+
         <!-- Add delete button if user is authorized -->
         @can('delete', $comment)
         <form action="{{ route('comments.destroy', $comment->id) }}" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit">Delete</button>
+            <button class="button">Delete</button>
         </form>
         @endcan
     </div>
@@ -135,10 +149,10 @@ showcomments -->
     <p>No comments yet.</p>
     @endforelse
 
-
-
-
 </div>
+
+
+
 
 
 @endsection

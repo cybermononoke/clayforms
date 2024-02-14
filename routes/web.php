@@ -84,10 +84,8 @@ Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts
 
 //comment routes
 
-Route::post('/comments', 'CommentController@store')->name('comments.store');
-Route::delete('/comments/{id}', 'CommentController@destroy')->name('comments.destroy');
-
-
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');  
+Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');  
 
 
 //
