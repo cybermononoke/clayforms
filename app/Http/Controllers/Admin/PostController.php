@@ -34,9 +34,6 @@ class PostController extends Controller
         });
     }
 
-
-
-
     // public function update(Request $request, Post $post)
     // {
     //     if (gate::denies('update-post', $post)) {
@@ -44,15 +41,13 @@ class PostController extends Controller
     //     }
     // }
 
-    public function update(Request $request, Post $post){
+    public function update(Request $request, Post $post)
+    {
         $post->update($request->all());
 
-        return redirect()->route('admin.posts.show',$post->id);
-
+        return redirect()->route('admin.posts.show', $post->id);
 
     }
-
-
 
     // public function update(Request $request, $id)
     // {
@@ -66,17 +61,6 @@ class PostController extends Controller
     //     return redirect()->route('journals.index')
     //         ->with('success', 'Journal entry updated successfully!');
     // }
-
-
-
-
-
-
-
-
-
-
-
 
     public function create()
     {
@@ -116,10 +100,10 @@ class PostController extends Controller
             ->with('success', 'Post deleted successfully!');
     }
 
-
     public function edit($id)
     {
         $post = Post::findOrFail($id);
+
         return view('admin.posts.edit', compact('post'));
     }
 }
