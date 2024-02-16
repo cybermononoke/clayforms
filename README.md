@@ -1,1 +1,1 @@
-cyberathens: simple journal app made using laravel
+cybermononoke/apps/clayforms/blog
