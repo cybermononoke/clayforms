@@ -4,7 +4,8 @@
 @section('content')
 <main>
     <h1>w e l c o m e <br>
-        クレイフォームズ
+        サイバーモノノケ
+
     </h1>
 
 

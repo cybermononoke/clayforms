@@ -42,16 +42,16 @@
 <!-- NAV MENU -->
 <div x-data="{ open: false }" @click.away="open = false">
     <template x-if="!open">
-        <button @click="open = true" class="menu-button">M3NU</button>
+        <button @click="open = true" class="menu-button">MENU</button>
     </template>
     <div x-show="open" class="menu-container">
-        <a href="/home" class="menu-link" @click="open = false">H0M3</a>
-        <a href="/admin/posts" class="menu-link" @click="open = false">4LL P0STS</a>
+        <a href="/home" class="menu-link" @click="open = false">HOME</a>
+        <a href="/admin/posts" class="menu-link" @click="open = false">ALL POSTS</a>
         <!-- <a href="/journals" class="menu-link" @click="open = false">J0URN4LS</a> -->
-        <a href="/login" class="menu-link" @click="open = false">L0G!N</a>
+        <a href="/login" class="menu-link" @click="open = false">LOGIN</a>
         <!-- <a href="/register" class="menu-link" @click="open = false">R3G!ST3R</a> -->
-        <a href="/profile" class ="menu-link" @click="open = false"> PR0F!L3 </a>
-        <a href="{{ route('about') }}" class="menu-link" @click="open = false">4B0UT</a>
+        <a href="/profile" class ="menu-link" @click="open = false"> PROFILE </a>
+        <a href="{{ route('about') }}" class="menu-link" @click="open = false">ABOUT</a>
 
     </div>
 </div>

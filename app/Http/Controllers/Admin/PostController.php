@@ -34,12 +34,49 @@ class PostController extends Controller
         });
     }
 
-    public function update(Request $request, Post $post)
-    {
-        if (gate::denies('update-post', $post)) {
-            abort(403, 'unauthorized action');
-        }
+
+
+
+    // public function update(Request $request, Post $post)
+    // {
+    //     if (gate::denies('update-post', $post)) {
+    //         abort(403, 'unauthorized action');
+    //     }
+    // }
+
+    public function update(Request $request, Post $post){
+        $post->update($request->all());
+
+        return redirect()->route('admin.posts.show',$post->id);
+
+
     }
+
+
+
+    // public function update(Request $request, $id)
+    // {
+    //     $validatedData = $request->validate([
+    //         'title' => 'required|max:255',
+    //         'content' => 'required',
+    //     ]);
+
+    //     Journal::whereId($id)->update($validatedData);
+
+    //     return redirect()->route('journals.index')
+    //         ->with('success', 'Journal entry updated successfully!');
+    // }
+
+
+
+
+
+
+
+
+
+
+
 
     public function create()
     {
@@ -48,7 +85,8 @@ class PostController extends Controller
         } else {
             //actual line below
             // abort(403, 'Unauthorized action');
-            //current line that lets me do stuff even if not admin below
+            //line that lets me do stuff even if not admin below
+            //actually it doesn't matter since i'm hiding the link from non-admins
             return view('admin.posts.create');
         }
     }
@@ -76,5 +114,12 @@ class PostController extends Controller
 
         return redirect()->route('admin.posts.index')
             ->with('success', 'Post deleted successfully!');
+    }
+
+
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('admin.posts.edit', compact('post'));
     }
 }

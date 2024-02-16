@@ -12,13 +12,8 @@
             
 
         <p>
-            BEGIN <br>
-            cybermononoke is a single-celled organism <br>
-            at Any Given Time <br>
-            BREAK <br>
-            this is a simple app <br>
-            that does stuff<br>
-            END
+           blah blah blah this is an app that does stuff.
+           
 
         </p>
         </div>
