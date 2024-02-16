@@ -20,8 +20,14 @@
         }
 
         .register-link:hover {
-            color: #F06292;
+            color: #55585e;
         }
+
+        html {
+            overflow: hidden;
+        }
+
+
     </style>
 
 

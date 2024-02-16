@@ -89,14 +89,14 @@ Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('co
 
 
 //
-Route::get('/assign-role/{userId}', function ($userId) {
+Route::get('/assign-role/-user{userId}', function ($userId) {
     $user = User::find($userId);
 
     if (! $user) {
         return 'User not found';
     }
 
-    $user->role = 'admin';
+    $user->role = 'user';
     $user->save();
 
     return 'Role assigned successfully';

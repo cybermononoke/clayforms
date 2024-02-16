@@ -8,6 +8,12 @@
         .left-aligned-label {
             text-align: left;
         }
+
+        html {
+            overflow: hidden;
+        }
+
+        
     </style>
 
     <div class="header text-center mb-8">

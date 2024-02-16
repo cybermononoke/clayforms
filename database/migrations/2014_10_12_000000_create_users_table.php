@@ -17,10 +17,15 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            //adding role to new user creation, instead of having it in a seperate file
+            $table->string('role')->default('user');
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
+
+    
 
     /**
      * Reverse the migrations.

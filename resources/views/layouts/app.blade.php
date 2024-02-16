@@ -68,9 +68,15 @@
 
         p {
             font-family: 'Inconsolata', sans-serif;
-            color: #F8C8DC;
+            color: #55585e;
             font-size: 16px;
 
+        }
+
+        p2{
+            font-family: 'Inconsolata', sans-serif;
+            color: #F8C8DC;
+            font-size: 16px;
         }
 
 
@@ -223,6 +229,23 @@
 
         }
 
+        .deletecommentbutton {
+            font-family: 'Inconsolata', sans-serif;
+            background-color: transparent;
+            border: none;
+            color: #55585e;
+            text-align: left;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            cursor: pointer;
+            
+
+        }
+        .deletecommentbutton:hover {
+            color: #F8C8DC;
+        }
+
         .title-input {
             font-family: 'Karla', sans-serif;
             background-color: transparent;
@@ -344,14 +367,6 @@
             margin-bottom: 20px;
         }
 
-        .text-input:focus {
-            outline: none;
-
-            border-color: pink;
-
-            box-shadow: none;
-
-        }
     </style>
 </head>
 

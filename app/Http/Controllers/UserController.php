@@ -16,4 +16,6 @@ class UserController extends Controller
 
         return view('user.status', compact('isLoggedIn', 'user'));
     }
+
+    
 }

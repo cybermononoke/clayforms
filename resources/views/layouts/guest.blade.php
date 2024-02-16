@@ -28,12 +28,20 @@
         background-color: #1b1c1e;
     }
 
-    
+
     .input:focus {
-    border-color: #FFF; /* Set the border color */
-    outline: none; /* Remove the default browser outline */
-    box-shadow: none; /* Remove any box shadow */
-}
+        border-color: #FFF;
+        /* Set the border color */
+    
+        box-shadow: none;
+        /* Remove any box shadow */
+
+        outline: none !important;
+    }
+
+
+
+
 
 
     .custom-color {
@@ -42,17 +50,15 @@
 
     .custom-color:hover {
         color: #3b3c40;
-        
+
     }
-
-
 
     input:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0px 1000px #1b1c1e inset !important; /* Set the background color */
-        -webkit-text-fill-color: #F8C8DC !important; /* Set the text color */
+        -webkit-box-shadow: 0 0 0px 1000px #1b1c1e inset !important;
+        /* Set the background color */
+        -webkit-text-fill-color: #F8C8DC !important;
+        /* Set the text color */
     }
-
-    
 </style>
 
 <body>

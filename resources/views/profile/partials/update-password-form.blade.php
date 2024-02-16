@@ -10,7 +10,7 @@
         </h2>
 
         <p class="mt-1 text-sm " style="color: #4c4d4f;">
-            {{ __('use a bunch of gibberish im sure itll work fine') }}
+            {{ __("use a bunch of gibberish i'm sure it'll work fine") }}
         </p>
     </header>
 
