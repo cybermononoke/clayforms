@@ -86,16 +86,35 @@ Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
-//
-Route::get('/assign-role/-user{userId}', function ($userId) {
+
+//assign role routes
+// Route::get('/assign-role/-user{userId}', function ($userId) {
+//     $user = User::find($userId);
+
+//     if (! $user) {
+//         return 'User not found';
+//     }
+
+//     $user->role = 'user';
+//     $user->save();
+
+//     return 'Role assigned successfully';
+// });
+
+
+Route::get('/assign-role/{role}/{userId}', function ($role, $userId) {
     $user = User::find($userId);
 
-    if (! $user) {
+    if (!$user) {
         return 'User not found';
     }
 
-    $user->role = 'user';
-    $user->save();
+    if ($role === 'admin' || $role === 'user') {
+        $user->role = $role;
+        $user->save();
 
-    return 'Role assigned successfully';
+        return 'Role assigned successfully';
+    } else {
+        return 'Invalid role specified';
+    }
 });

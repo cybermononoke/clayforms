@@ -4,7 +4,7 @@
 
 <!-- STATUS CONTAINER -->
 <div class="status-container">
-    <p>ST4TUS</p>
+    <p2>STATUS</p2>
     @if ($isLoggedIn)
     <p>logged in as {{ $user->name }}</p>
     @else
