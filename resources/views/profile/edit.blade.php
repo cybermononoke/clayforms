@@ -15,7 +15,9 @@
     <a href="/force-logout" class="menu-link" @click="open = false">L0G0UT</a>
 </div>
 
-<div class="container flex justify-center">
+
+
+<div class="container flex justify-left">
 
 
 
@@ -40,11 +42,16 @@
                             @include('profile.partials.update-password-form')
                         </div>
                     </div>
+
+
+
                     <div class="p-4 sm:p-8 bg-transparent rounded-lg" style="color: #F8C8DC;">
                         <div class="max-w-xl">
                             @include('profile.partials.delete-user-form')
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

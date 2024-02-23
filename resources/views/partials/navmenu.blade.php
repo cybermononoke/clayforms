@@ -3,16 +3,16 @@
         display: none; /* Hide the menu button */
     }
 
-    .menu-container {
-        position: sticky;
+    /* .menu-container {
+        position: fixed;
         top: 10px;
-        left: 10px; /* Position the menu container in the top right corner */
+        right: 10px;
         background-color: transparent;
         border: 1px solid transparent;
         border-radius: 4px;
         z-index: 1000;
         padding: 10px;
-    }
+    } */
 
     .menu-link {
         display: inline-block;

@@ -5,6 +5,7 @@
         }
     </style>
     <header>
+    <div class="text-left">
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('update password') }}
         </h2>
@@ -12,6 +13,7 @@
         <p class="mt-1 text-sm " style="color: #4c4d4f;">
             {{ __("use a bunch of gibberish i'm sure it'll work fine") }}
         </p>
+    </div>
     </header>
 
     <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">

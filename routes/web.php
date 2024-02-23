@@ -122,3 +122,7 @@ Route::get('/assign-role/{role}/{userId}', function ($role, $userId) {
 
 Route::post('/reply/store', [CommentController::class, 'storeReply'])->name('reply.store');
 
+
+Route::get('/bar', function () {
+    return view('testlink');
+});

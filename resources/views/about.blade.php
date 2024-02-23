@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{ asset('css/glitch.css') }}" />
 
 @section('content')
+
+
 <main>
     <section>
         <h1>

@@ -5,13 +5,16 @@
         }
     </style>
     <header>
+    <div class="text-left">
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('profile information') }}
         </h2>
+   
 
         <p class="mt-1 text-sm " style="color: #4c4d4f;">
             {{ __("update your information") }}
         </p>
+        </div>
     </header>
 
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
