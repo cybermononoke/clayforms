@@ -3,17 +3,10 @@
 
 @section('content')
 <main>
-    <h1>w e l c o m e <br>
-        サイバーモノノケ
-
-    </h1>
-
-
-
-
+    <h5>w e l c o m e <br>
+    </h5>
+    <h6>サイバーモノノケ</h6>
 </main>
-
-
 
 
 <div class="footer">

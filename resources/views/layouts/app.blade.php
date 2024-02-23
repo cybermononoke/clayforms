@@ -330,6 +330,22 @@
 
         }
 
+        h5 {
+            font-family: 'Karla', sans-serif;
+            color: #F8C8DC;
+            font-size: 6em;
+            margin-top: 100px;
+            text-align: left;
+
+        }
+        h6 {
+            font-family: 'Karla', sans-serif;
+            color: #55585e;
+            font-size: 2em;
+            text-align: left;
+
+        }
+
 
         .record-button {
             display: inline-block;

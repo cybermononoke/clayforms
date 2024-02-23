@@ -82,7 +82,7 @@ COMMENT FUNCTIONALTIY
         <input type="hidden" name="post_id" value="{{ $post->id }}">
         <input type="hidden" name="user_id" value="{{ Auth::id() }}">
         <textarea name="content" rows="2" placeholder="say something..."></textarea>
-        <button type="submit" class="button2" style="float: right;">submit comment</button>
+        <button type="submit" class="button2" style="float: right;">>submit comment<</button>
         @else
         <p>log in to leave a comment</p>
         @endauth
@@ -119,7 +119,7 @@ COMMENT FUNCTIONALTIY
     </div>
 
     @empty
-    <p>No comments yet.</p>
+    <p>no comments yet.</p>
     @endforelse
 
 </div>

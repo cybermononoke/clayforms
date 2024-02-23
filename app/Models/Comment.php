@@ -18,4 +18,9 @@ class Comment extends Model
 
     //mass assignable
     protected $fillable = ['user_id', 'post_id', 'content'];
+
+    public function replies(){
+        return $this->hasMany(Comment::class, 'parent_id')->orderBy('created_at', 'asc');
+    }
+    
 }

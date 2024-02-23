@@ -118,3 +118,7 @@ Route::get('/assign-role/{role}/{userId}', function ($role, $userId) {
         return 'Invalid role specified';
     }
 });
+
+
+Route::post('/reply/store', [CommentController::class, 'storeReply'])->name('reply.store');
+
