@@ -1,1 +1,1 @@
-cybermononoke/apps/clayforms/blog
+This was, if not the very first, one of the very first Laravel projects I ever made. Black + pink UI is underrated IMO.
